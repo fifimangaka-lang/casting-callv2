@@ -1,0 +1,5 @@
+{
+  "name": "Manga Casting Call",
+  "description": "A casting call website for a fantasy adventure manga. It features sections for each character with dynamically generated audition lines via Gemini, project specifications, and an interactive UI.",
+  "requestFramePermissions": []
+}
