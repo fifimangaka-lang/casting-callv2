@@ -17,7 +17,7 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
             <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
               Synopsis
             </h3>
-            <p className="font-light leading-relaxed">
+            <p className=" leading-relaxed">
               A mind-reading captain, a diamond-fisted genius, and a
               fire-breathing swordsman hunt a rogue ringmaster whose forbidden
               magic defies the law. But when the chase exposes corruption within
@@ -29,7 +29,7 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
             <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
               Project Scope
             </h3>
-            <p className="font-light leading-relaxed">
+            <p className=" leading-relaxed">
               We are casting for the main roles in an upcoming comic dub
               adaptation of the fantasy adventure manga "Ye Olde Treehouse". The
               total project will encompass the "Nosferi Dilemma" Arc; Volumes
@@ -41,13 +41,21 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
             <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
               Requirements
             </h3>
-            <ul className="list-disc list-inside font-light space-y-2">
-              <li>High-quality microphone and recording setup.</li>
-              <li>Ability to take direction and perform script revisions.</li>
+            <ul className="list-disc list-inside space-y-2">
+              <li>
+                Audition files must be either <strong>MP3</strong> or{' '}
+                <strong>WAV</strong>.
+              </li>
+              <li>
+                Files must be labeled as <strong>Character_YourName</strong>{' '}
+                (e.g., Rou_JohnDoe).
+              </li>
+              <li>
+                Please record <strong>at least two takes</strong> per line.
+              </li>
               <li>
                 Prior voice acting experience is preferred but not required.
               </li>
-              <li>Passion for fantasy and storytelling.</li>
             </ul>
           </div>
           <div
@@ -57,9 +65,9 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
             <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
               Audition
             </h3>
-            <p className="font-light leading-relaxed mb-6">
-              Ready to join the adventure? Fill out the application to submit
-              your audition. Submissions close on Dec 31st.
+            <p className=" leading-relaxed mb-6">
+              Fill out the application to submit your audition! Submissions
+              close on March 31st.
             </p>
             <button
               onClick={onApplyClick}

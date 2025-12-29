@@ -141,6 +141,8 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
             key={currentImageIndex}
             src={character.imageUrls[currentImageIndex]}
             alt={`${character.name}`}
+            fetchPriority="high"
+            loading="eager"
             className={`w-full h-full ${
               isMangaPage ? 'object-contain' : 'object-cover'
             }`}

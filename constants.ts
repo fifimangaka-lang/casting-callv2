@@ -5,7 +5,7 @@ export const MANGA_TITLE = 'Ye Olde Treehouse';
 // IMPORTANT: Replace this with your actual Google Form embed URL.
 // To get the embed URL, go to your Google Form, click "Send", go to the "<>" (Embed) tab, and copy the src from the iframe code.
 export const GOOGLE_FORM_EMBED_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSdf_blah_blah_placeholder/viewform?embedded=true';
+  'https://docs.google.com/forms/d/e/1FAIpQLScSLINyvmaTpTHY6ZpncWQg5Y85QBr2CHtIul5ZT9-0kXFk-A/viewform?embedded=true"';
 
 export const OST_PLAYLIST = [
   {
@@ -130,7 +130,7 @@ export const CHARACTERS: Character[] = [
     id: 1,
     name: 'Rou Akei',
     role: 'The Unlikely Captain',
-    bio: "Rou (Roo) is the Captain of Viveform’s top protection squad, based in New Alta Izera, Glory Peak. She’s a bit unorthodox, often charging ahead before fully thinking things through, but that same impulsiveness is driven by passion, loyalty, and an unshakable sense of justice. She's determined to prove herself to the world.",
+    bio: "Rou is the Captain of Viveform’s top protection squad, based in New Alta Izera, Glory Peak. She’s a bit unorthodox, often charging ahead before fully thinking things through, but that same impulsiveness is driven by passion, loyalty, and an unshakable sense of justice. She's determined to prove herself to the world.",
     personality:
       'Impulsive but heartfelt, she acts on instinct and emotion more than caution.',
     imageUrls: [
