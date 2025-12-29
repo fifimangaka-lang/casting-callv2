@@ -109,15 +109,19 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
       });
   };
 
+  // Index 0 is the Atmosphere Cover Art
+  // Index 1+ are Manga Pages (B4 Sizing)
+  const isMangaPage = currentImageIndex > 0;
+
   return (
     <div
       className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[70] flex items-center justify-center p-4 animate-fade-in"
       onClick={onClose}
     >
       <div
-        className={`relative bg-slate-900 border border-slate-700 rounded-xl max-w-5xl w-full h-[85vh] overflow-hidden flex flex-col md:grid ${
+        className={`relative bg-slate-900 border border-slate-700 rounded-xl max-w-6xl w-full h-[90vh] md:h-[85vh] overflow-hidden flex flex-col md:grid ${
           areLinesVisible ? 'md:grid-cols-[0fr_1fr]' : 'md:grid-cols-2'
-        } gap-0 transition-[grid-template-columns] duration-500 ease-in-out shadow-2xl`}
+        } gap-0 transition-all duration-500 ease-in-out shadow-2xl`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -127,31 +131,34 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
           <CloseIcon />
         </button>
 
-        {/* Left Side: Image */}
-        <div className="relative overflow-hidden h-64 md:h-full shrink-0">
+        {/* Left Side: Image Display Area */}
+        <div
+          className={`relative overflow-hidden shrink-0 flex items-center justify-center bg-black transition-all duration-300 ${
+            isMangaPage ? 'h-[60vh] md:h-full' : 'h-48 sm:h-64 md:h-full'
+          }`}
+        >
           <img
+            key={currentImageIndex}
             src={character.imageUrls[currentImageIndex]}
-            alt={`${character.name} (${currentImageIndex + 1}/${
-              character.imageUrls.length
-            })`}
-            className="w-full h-full object-cover"
+            alt={`${character.name}`}
+            className={`w-full h-full ${
+              isMangaPage ? 'object-contain' : 'object-cover'
+            }`}
           />
           {character.imageUrls.length > 1 && (
             <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-10">
               <button
                 onClick={handlePrevImage}
-                className="p-2 bg-black/50 rounded-full text-white hover:bg-black/80 transition-colors"
-                aria-label="Previous Image"
+                className="p-2 bg-black/50 rounded-full text-white hover:bg-black/80 transition-colors shadow-lg"
               >
                 <ArrowLeftIcon />
               </button>
-              <span className="text-white text-sm font-semibold bg-black/50 px-3 py-1 rounded-full tabular-nums">
+              <span className="text-white text-xs md:text-sm font-semibold bg-black/50 px-3 py-1 rounded-full tabular-nums">
                 {currentImageIndex + 1} / {character.imageUrls.length}
               </span>
               <button
                 onClick={handleNextImage}
-                className="p-2 bg-black/50 rounded-full text-white hover:bg-black/80 transition-colors"
-                aria-label="Next Image"
+                className="p-2 bg-black/50 rounded-full text-white hover:bg-black/80 transition-colors shadow-lg"
               >
                 <ArrowRightIcon />
               </button>
@@ -159,31 +166,41 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
           )}
         </div>
 
-        {/* Right Side: Content */}
-        <div className="p-6 md:p-8 flex flex-col h-full overflow-y-auto min-h-0">
+        {/* Right Side: Content Area */}
+        <div className="p-6 md:p-8 flex flex-col flex-1 overflow-y-auto min-h-0 bg-slate-900">
           <div className="pb-8">
-            <h2 className="text-3xl md:text-4xl font-bold font-cinzel text-transparent bg-clip-text bg-gradient-to-r from-[#E0F7FA] to-[#236088] mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold  text-transparent bg-clip-text bg-gradient-to-r from-[#E0F7FA] to-[#016F93] mb-2">
               {character.name}
             </h2>
-            <p className="text-[#E0F7FA] mb-6 text-lg">{character.role}</p>
+            <p className="text-[#E0F7FA] mb-6 text-lg tracking-wide uppercase  opacity-80">
+              {character.role}
+            </p>
 
-            <h4 className="font-bold text-lg text-slate-200 mt-4 mb-2 border-b border-slate-700 pb-1">
+            <h4 className="font-bold text-lg text-slate-200 mt-4 mb-2 border-b border-slate-700/50 pb-1 ">
               Biography
             </h4>
-            <p className="text-slate-300 font-light text-base leading-relaxed">
+            <p className="text-slate-300 font-light text-base leading-relaxed mb-6">
               {character.bio}
             </p>
 
-            <h4 className="font-bold text-lg text-slate-200 mt-6 mb-2 border-b border-slate-700 pb-1">
-              Character Requirements
+            <h4 className="font-bold text-lg text-slate-200 mt-6 mb-2 border-b border-slate-700/50 pb-1 ">
+              Personality
             </h4>
-            <p className="text-slate-300 font-light text-base leading-relaxed">
+            <p className="text-slate-300 font-light text-base leading-relaxed mb-6">
               {character.personality}
             </p>
 
-            <h4 className="font-bold text-lg text-slate-200 mt-6 mb-3 border-b border-slate-700 pb-1">
-              Reference Voicelines
-            </h4>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-6 mb-3 border-b border-slate-700/50 pb-1">
+              <h4 className="font-bold text-lg text-slate-200 ">
+                Voice Reference
+              </h4>
+              {character.voiceRef && (
+                <span className="text-sm italic text-[#DEF3F6] mb-1 sm:mb-0 font-medium">
+                  {character.voiceRef}
+                </span>
+              )}
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {character.voiceExamples.map((voiceUrl, index) => (
                 <button
@@ -202,7 +219,7 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
             <div className="mt-4">
               <button
                 onClick={handleToggleAuditionLines}
-                className="w-full flex items-center justify-center gap-2 bg-[#006E92] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#005c7a] transition-all duration-300 shadow-md"
+                className="w-full flex items-center justify-center gap-2 bg-[#016F93] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#015a7a] transition-all duration-300 shadow-md"
               >
                 {areLinesVisible ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 {areLinesVisible
@@ -219,25 +236,21 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
               >
                 {auditionLines && (
                   <div className="mt-4 p-5 bg-slate-800 border border-slate-600 rounded-lg shadow-inner">
-                    <div className="flex justify-between items-center mb-3 border-b border-slate-700 pb-2">
-                      <h5 className="font-bold text-md text-slate-200">
+                    <div className="flex justify-between items-center mb-3 border-b border-slate-700/50 pb-2">
+                      <h5 className="font-bold text-md text-slate-200 ">
                         Audition Lines:
                       </h5>
                       <div className="flex items-center gap-2 text-slate-300">
                         <button
                           onClick={handleCopyLines}
                           className="p-1.5 rounded-full hover:bg-slate-700 transition-colors disabled:cursor-not-allowed"
-                          aria-label={isCopied ? 'Lines copied' : 'Copy lines'}
-                          disabled={isCopied}
-                          title="Copy to clipboard"
                         >
                           {isCopied ? <CheckIcon /> : <CopyIcon />}
                         </button>
                         <div className="h-4 w-px bg-slate-600 mx-1"></div>
                         <button
                           onClick={decreaseFontSize}
-                          className="p-1.5 rounded-full hover:bg-slate-700 transition-colors disabled:opacity-50"
-                          aria-label="Decrease font size"
+                          className="p-1.5 rounded-full hover:bg-slate-700 transition-colors"
                           disabled={lineFontSize <= 12}
                         >
                           <MinusIcon />
@@ -247,8 +260,7 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
                         </span>
                         <button
                           onClick={increaseFontSize}
-                          className="p-1.5 rounded-full hover:bg-slate-700 transition-colors disabled:opacity-50"
-                          aria-label="Increase font size"
+                          className="p-1.5 rounded-full hover:bg-slate-700 transition-colors"
                           disabled={lineFontSize >= 28}
                         >
                           <PlusIcon />

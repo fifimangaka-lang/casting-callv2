@@ -1,4 +1,3 @@
-
 export interface Character {
   id: number;
   name: string;
@@ -7,4 +6,5 @@ export interface Character {
   personality: string;
   imageUrls: string[];
   voiceExamples: string[];
+  voiceRef?: string;
 }
