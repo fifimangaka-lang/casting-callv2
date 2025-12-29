@@ -10,9 +10,12 @@ import { CHARACTERS } from './constants';
 import type { Character } from './types';
 import { MusicPlayer } from './components/MusicPlayer';
 import { EmailSignup } from './components/EmailSignup';
+import { PronunciationSection } from './components/PronunciationSection';
 
 function App() {
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
+    null
+  );
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
   const handleSelectCharacter = (character: Character) => {
@@ -22,7 +25,7 @@ function App() {
   const handleCloseModal = () => {
     setSelectedCharacter(null);
   };
-  
+
   const handleOpenApplyModal = () => {
     setIsApplyModalOpen(true);
   };
@@ -36,8 +39,12 @@ function App() {
       <Header onApplyClick={handleOpenApplyModal} />
       <main>
         <Hero />
-        <CharacterGrid characters={CHARACTERS} onSelectCharacter={handleSelectCharacter} />
+        <CharacterGrid
+          characters={CHARACTERS}
+          onSelectCharacter={handleSelectCharacter}
+        />
         <ProjectSpecs onApplyClick={handleOpenApplyModal} />
+        <PronunciationSection />
         <EmailSignup />
       </main>
       <Footer />
@@ -47,10 +54,8 @@ function App() {
           onClose={handleCloseModal}
         />
       )}
-      {isApplyModalOpen && (
-        <ApplyModal onClose={handleCloseApplyModal} />
-      )}
-      <MusicPlayer />
+      {isApplyModalOpen && <ApplyModal onClose={handleCloseApplyModal} />}
+      {/* <MusicPlayer /> */}
     </div>
   );
 }

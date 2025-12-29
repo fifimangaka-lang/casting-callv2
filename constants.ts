@@ -22,6 +22,43 @@ export const OST_PLAYLIST = [
   },
 ];
 
+export const GLOBAL_PRONUNCIATIONS = [
+  { term: 'Rou Akei', phonetic: 'ROO Ahh-KAY', category: 'name' },
+  { term: 'Yoroua', phonetic: 'yo-ROU-UHH', category: 'name' },
+  { term: 'Fig Noston', phonetic: 'FIG NAH-stun', category: 'name' },
+  {
+    term: 'Drendith Nosferi',
+    phonetic: 'DREN-dith NOS-FAIRY',
+    category: 'name',
+  },
+  { term: 'Ender Valen', phonetic: 'EN-der VAAY-len', category: 'name' },
+  {
+    term: 'Kenzi Akimoto',
+    phonetic: 'KEN-zee AH-kee-moh-toh',
+    category: 'name',
+  },
+  { term: 'Solomon Vex', phonetic: 'SAHL-uhh-muhn VEX', category: 'name' },
+  { term: 'Boca', phonetic: 'BOH-kah', category: 'name' },
+  { term: 'Kaz Greenfield', phonetic: 'KAHZ GREEN-field', category: 'name' },
+  { term: 'Louisa De Luz', phonetic: 'LOO-ee-sah DEH LOOZ', category: 'name' },
+  { term: 'Augur', phonetic: 'Ahh-guhr', category: 'term' },
+  { term: 'Viveform', phonetic: 'VIH-VIH-form', category: 'term' },
+  {
+    term: 'New Alta Izera',
+    phonetic: 'NEW ALL-tah ee-ZEER-ah',
+    category: 'location',
+  },
+  {
+    term: 'New Alta Dercha',
+    phonetic: 'NEW ALL-tah DER-chah',
+    category: 'location',
+  },
+  { term: 'Teleregnum', phonetic: 'TEL-eh-REG-num', category: 'term' },
+  { term: 'Admavis', phonetic: 'AD-may-vis', category: 'term' },
+  { term: 'Spirignum', phonetic: 'SPIH-rihg-num', category: 'term' },
+  { term: 'Perfissio', phonetic: 'per-FEE-SIOH', category: 'term' },
+];
+
 const voiceRou = [
   'assets/audio/Rou1.wav',
   'assets/audio/Rou2.wav',

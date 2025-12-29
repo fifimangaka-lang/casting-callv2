@@ -63,6 +63,15 @@ export const Header: React.FC<HeaderProps> = ({ onApplyClick }) => {
               </a>
             </li>
             <li>
+              <a
+                href="#pronunciation"
+                onClick={(e) => handleNavClick(e, '#pronunciation')}
+                className="hover:text-[#016F93] transition-colors duration-300"
+              >
+                Pronunciation
+              </a>
+            </li>
+            <li>
               <button
                 onClick={onApplyClick}
                 className="hover:text-[#006E92] transition-colors duration-300"
