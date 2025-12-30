@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           Casting Call
         </h2>
         <p className="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto animate-fade-in-up text-slate-200">
-          For the fantasy adventure manga:{' '}
+          Season 1 of:{' '}
           <span className="font-bold font-cinzel text-white">
             {MANGA_TITLE}
           </span>
