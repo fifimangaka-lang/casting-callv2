@@ -60,69 +60,69 @@ export const GLOBAL_PRONUNCIATIONS = [
 ];
 
 const voiceRou = [
-  'public/assets/Rou1.wav',
-  'public/assets/Rou2.wav',
-  'public/assets/Rou3.wav',
-  'public/assets/Rou4.wav',
+  'assets/Rou1.wav',
+  'assets/Rou2.wav',
+  'assets/Rou3.wav',
+  'assets/Rou4.wav',
 ];
 
 const voiceFig = [
-  'public/assets/Fig1.wav',
-  'public/assets/Fig2.wav',
-  'public/assets/Fig3.wav',
-  'public/assets/Fig4.wav',
+  'assets/Fig1.wav',
+  'assets/Fig2.wav',
+  'assets/Fig3.wav',
+  'assets/Fig4.wav',
 ];
 
 const voiceEnder = [
-  'public/assets/Ender1.wav',
-  'public/assets/Ender2.wav',
-  'public/assets/Ender6.wav',
-  'public/assets/Ender4.wav',
-  'public/assets/Ender5.wav',
-  'public/assets/Ender3.wav',
+  'assets/Ender1.wav',
+  'assets/Ender2.wav',
+  'assets/Ender6.wav',
+  'assets/Ender4.wav',
+  'assets/Ender5.wav',
+  'assets/Ender3.wav',
 ];
 
 const voiceVex = [
-  'public/assets/Vex1.wav',
-  'public/assets/Vex2.wav',
-  'public/assets/Vex3.wav',
-  'public/assets/Vex4.wav',
+  'assets/Vex1.wav',
+  'assets/Vex2.wav',
+  'assets/Vex3.wav',
+  'assets/Vex4.wav',
 ];
 
 const voiceKenzi = [
-  'public/assets/Kenzi1.wav',
-  'public/assets/Kenzi2.wav',
-  'public/assets/Kenzi3.wav',
-  'public/assets/Kenzi4.wav',
+  'assets/Kenzi1.wav',
+  'assets/Kenzi2.wav',
+  'assets/Kenzi3.wav',
+  'assets/Kenzi4.wav',
 ];
 
 const voiceBoca = [
-  'public/assets/Boca1.wav',
-  'public/assets/Boca2.wav',
-  'public/assets/Boca3.wav',
-  'public/assets/Boca4.wav',
+  'assets/Boca1.wav',
+  'assets/Boca2.wav',
+  'assets/Boca3.wav',
+  'assets/Boca4.wav',
 ];
 
 const voiceKaz = [
-  'public/assets/Kaz1.wav',
-  'public/assets/Kaz2.wav',
-  'public/assets/Kaz3.wav',
-  'public/assets/Kaz4.wav',
+  'assets/Kaz1.wav',
+  'assets/Kaz2.wav',
+  'assets/Kaz3.wav',
+  'assets/Kaz4.wav',
 ];
 
 const voiceDrendith = [
-  'public/assets/Drendith1.wav',
-  'public/assets/Drendith2.wav',
-  'public/assets/Drendith3.wav',
-  'public/assets/Drendith4.wav',
-  'public/assets/Drendith5.wav',
+  'assets/Drendith1.wav',
+  'assets/Drendith2.wav',
+  'assets/Drendith3.wav',
+  'assets/Drendith4.wav',
+  'assets/Drendith5.wav',
 ];
 
 const voiceLouisa = [
-  'public/assets/Louisa1.wav',
-  'public/assets/Louisa2.wav',
-  'public/assets/Louisa3.wav',
-  'public/assets/Louisa4.wav',
+  'assets/Louisa1.wav',
+  'assets/Louisa2.wav',
+  'assets/Louisa3.wav',
+  'assets/Louisa4.wav',
 ];
 
 export const CHARACTERS: Character[] = [
