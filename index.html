@@ -97,6 +97,20 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
+    <!-- Netlify Hidden Form for Detection -->
+    <form name="casting-call" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="radio" name="age" />
+      <input type="radio" name="experience" />
+      <textarea name="equipment"></textarea>
+      <input type="radio" name="primaryRole" />
+      <input type="text" name="otherRoles" />
+      <input type="radio" name="notify" />
+      <input type="file" name="audition-file" />
+      <input type="text" name="googleDriveLink" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

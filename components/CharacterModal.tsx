@@ -30,7 +30,7 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
   const [playingVoiceLine, setPlayingVoiceLine] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [areLinesVisible, setAreLinesVisible] = useState<boolean>(false);
-  const [lineFontSize, setLineFontSize] = useState<number>(14);
+  const [lineFontSize, setLineFontSize] = useState<number>(18);
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
   useEffect(() => {

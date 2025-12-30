@@ -56,7 +56,7 @@ export const GLOBAL_PRONUNCIATIONS = [
   { term: 'Teleregnum', phonetic: 'TEL-eh-REG-num', category: 'term' },
   { term: 'Admavis', phonetic: 'AD-may-vis', category: 'term' },
   { term: 'Spirignum', phonetic: 'SPIH-rihg-num', category: 'term' },
-  { term: 'Perfissio', phonetic: 'per-FEE-SIOH', category: 'term' },
+  { term: 'Perfissio', phonetic: 'per-FIH-SIOH', category: 'term' },
 ];
 
 const voiceRou = [

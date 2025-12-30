@@ -58,6 +58,37 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
               </li>
             </ul>
           </div>
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
+              Payment Details
+            </h3>
+            <p className="leading-relaxed mb-4">
+              This is a <strong>PAID</strong> voice acting casting call. Please
+              note, this is an <strong>indie project</strong> with 1 staff
+              member (Me, Sam!) creating story and art for the manga, building
+              the websites, and handling all other production.
+            </p>
+            <div className="space-y-1">
+              <p className="font-bold">Payment Rate:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>$3 USD per line</li>
+                <li>
+                  Rates follow the{' '}
+                  <a
+                    href="https://voiceactingclub.com/rates/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#016F93] hover:underline font-semibold"
+                  >
+                    Voice Acting Club Indie Rate Guide
+                  </a>
+                </li>
+                <li>
+                  Payment made via <strong>Paypal</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div
             id="apply"
             className="bg-gray-50 p-6 rounded-lg border border-gray-200 md:col-span-2 text-center"
