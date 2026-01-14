@@ -283,7 +283,7 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
                         lineHeight: '1.6',
                       }}
                     >
-                      {auditionLines}
+                      {character.auditionLines}
                     </div>
                   </div>
                 )}
