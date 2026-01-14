@@ -132,12 +132,12 @@ export const CHARACTERS: Character[] = [
     role: 'The Unlikely Captain',
     bio: "Rou is the Captain of Viveform’s top protection squad, based in New Alta Izera, Glory Peak. She’s a bit unorthodox, often charging ahead before fully thinking things through, but that same impulsiveness is driven by passion, loyalty, and an unshakable sense of justice. She's determined to prove herself to the world.",
     personality:
-      'Impulsive but heartfelt, she acts on instinct and emotion more than caution.',
+      'Impulsive but heartfelt, she acts on instinct and emotion more than caution. Bright and energetic, with a sassy undertone.',
     imageUrls: [
-      'https://files.catbox.moe/du4qc7.png',
-      'https://files.catbox.moe/zh1ga1.png',
-      'https://files.catbox.moe/nlgbi0.png',
-      'https://files.catbox.moe/6afrsp.png',
+      'assets/RouPort.png',
+      'assets/RouPage1.png',
+      'assets/RouPage2.png',
+      'assets/RouPage3.png',
     ],
     voiceExamples: voiceRou,
     voiceRef: 'Judy Hopps - Zootopia (Ginnifer Goodwin)',
@@ -150,10 +150,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Calm, thoughtful and highly intelligent, Fig is the stability that keeps the team together.',
     imageUrls: [
-      'https://files.catbox.moe/d8czzw.png',
-      'https://files.catbox.moe/mwluwc.png',
-      'https://files.catbox.moe/9k8ju1.png',
-      'https://files.catbox.moe/fu9hqq.png',
+      'assets/FigPort.png',
+      'assets/FigPage1.png',
+      'assets/FigPage2.png',
+      'assets/FigPage3.png',
     ],
     voiceExamples: voiceFig,
     voiceRef: 'Elincia - Fire Emblem (Amanda Miller)',
@@ -166,10 +166,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Protective, patient, a man of few words, finds solace in nature, incredibly strong and resilient.',
     imageUrls: [
-      'https://files.catbox.moe/ds8hwk.png',
-      'https://files.catbox.moe/7731og.png',
-      'https://files.catbox.moe/0wyrzj.png',
-      'https://files.catbox.moe/617zi5.png',
+      'assets/DrendithPort.png',
+      'assets/DrenPage1.png',
+      'assets/DrenPage2.png',
+      'assets/DrenPage3.png',
     ],
     voiceExamples: voiceDrendith,
     voiceRef: "Astarion - Baldur's Gate 3 (Neil Newbon)",
@@ -182,10 +182,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://files.catbox.moe/af4rjx.png',
-      'https://files.catbox.moe/4xnnbz.png',
-      'https://files.catbox.moe/3tcekr.png',
-      'https://files.catbox.moe/2qp4cu.png',
+      'assets/EnderPort.png',
+      'assets/EnderPage1.png',
+      'assets/EnderPage2.png',
+      'assets/EnderPage3.png',
     ],
     voiceExamples: voiceEnder,
     voiceRef: "Tav 1 - Baldur's Gate 3 (Josh Wichard)",
@@ -198,10 +198,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://picsum.photos/seed/seraphina1/600/800',
-      'https://files.catbox.moe/26zano.png',
-      'https://files.catbox.moe/j2r5kz.png',
-      'https://files.catbox.moe/qhm6l1.png',
+      'assets/KenziPort.png',
+      'assets/KenziPage1.png',
+      'assets/KenziPage2.png',
+      'assets/KenziPage3.png',
     ],
     voiceExamples: voiceKenzi,
     voiceRef: 'Yuffie Kisaragi - Final Fantasy VII Remake (Suzie Yeung)',
@@ -214,10 +214,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://files.catbox.moe/5l8vxi.png',
-      'https://files.catbox.moe/a9jc38.png',
-      'https://files.catbox.moe/skwju3.png',
-      'https://files.catbox.moe/44lrk2.png',
+      'assets/VexPort.png',
+      'assets/VexPage1.png',
+      'assets/VexPage2.png',
+      'assets/VexPage3.png',
     ],
     voiceExamples: voiceVex,
     voiceRef: 'Prompto - Final Fantasy XV (Robbie Daymond)',
@@ -230,10 +230,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://files.catbox.moe/2pda2k.png',
-      'https://files.catbox.moe/epol49.png',
-      'https://files.catbox.moe/dp6gdm.png',
-      'https://files.catbox.moe/d867vp.png',
+      'assets/BocaPort.png',
+      'assets/BocaPage1.png',
+      'assets/BocaPage2.png',
+      'assets/BocaPage3.png',
     ],
     voiceExamples: voiceBoca,
     voiceRef: "Tails - Sonic the Hedgehog (Colleen O'Shaughnessey)",
@@ -246,10 +246,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://files.catbox.moe/wbjbcj.png',
-      'https://files.catbox.moe/v0bm8z.png',
-      'https://files.catbox.moe/mwvkyp.png',
-      'https://files.catbox.moe/iv04lv.png',
+      'assets/KazPort.png',
+      'assets/KazPage1.png',
+      'assets/KazPage2.png',
+      'assets/KazPage3.png',
     ],
     voiceExamples: voiceKaz,
     voiceRef: 'Rock Howard - Fatal Fury (Griffin Puatu)',
@@ -262,10 +262,10 @@ export const CHARACTERS: Character[] = [
     personality:
       'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
     imageUrls: [
-      'https://picsum.photos/seed/seraphina1/600/800',
-      'https://files.catbox.moe/m4cd6g.png',
-      'https://files.catbox.moe/1rvuwy.png',
-      'https://files.catbox.moe/gk78a9.png',
+      'assets/LouisaPort.png',
+      'assets/LouisaPage1.png',
+      'assets/LouisaPage2.png',
+      'assets/LouisaPage3.png',
     ],
     voiceExamples: voiceLouisa,
     voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',

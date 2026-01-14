@@ -110,9 +110,8 @@ export const PronunciationSection: React.FC = () => {
               </p>
               <p className="text-amber-700 text-xs mt-1 leading-relaxed">
                 Safari's built-in pronunciation engine may sound distorted or
-                robotic. For the intended studio-quality experience, we highly
-                recommend using <strong>Google Chrome</strong> or{' '}
-                <strong>Microsoft Edge</strong>.
+                robotic. For the intended pronunciation, we highly recommend
+                using desktop <strong>Google Chrome</strong>.
               </p>
             </div>
           </div>

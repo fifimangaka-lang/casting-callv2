@@ -133,20 +133,27 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
 
         {/* Left Side: Image Display Area */}
         <div
-          className={`relative overflow-hidden shrink-0 flex items-center justify-center bg-black transition-all duration-300 ${
-            isMangaPage ? 'h-[60vh] md:h-full' : 'h-48 sm:h-64 md:h-full'
+          className={`relative overflow-hidden shrink-0 flex items-center justify-center bg-white transition-all duration-300 ${
+            isMangaPage
+              ? 'h-[60vh] md:h-full'
+              : 'h-[50vh] sm:h-[60vh] md:h-full'
           }`}
         >
-          <img
-            key={currentImageIndex}
-            src={character.imageUrls[currentImageIndex]}
-            alt={`${character.name}`}
-            fetchPriority="high"
-            loading="eager"
-            className={`w-full h-full ${
-              isMangaPage ? 'object-contain' : 'object-cover'
+          <div
+            className={`w-full h-full flex items-center justify-center ${
+              !isMangaPage ? 'p-3 md:p-8' : 'p-0'
             }`}
-          />
+          >
+            <img
+              key={currentImageIndex}
+              src={character.imageUrls[currentImageIndex]}
+              alt={`${character.name}`}
+              // @ts-ignore
+              fetchpriority="high"
+              loading="eager"
+              className={`max-w-full max-h-full transition-all duration-300 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-200 rounded-sm`}
+            />
+          </div>
           {character.imageUrls.length > 1 && (
             <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-10">
               <button
