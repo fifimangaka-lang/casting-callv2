@@ -88,8 +88,8 @@ export const EmailSignup: React.FC = () => {
           Stay Updated
         </h2>
         <p className="max-w-2xl mx-auto mb-10 text-slate-300 text-lg">
-          Join the Atheria mailing list. Your email will be recorded directly
-          into our chronicle (Google Sheets) for future callouts.
+          Join the YOT mailing list to stay updated on the lastest casting calls
+          and project news.
         </p>
 
         {submitted ? (

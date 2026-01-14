@@ -146,7 +146,7 @@ export const CHARACTERS: Character[] = [
     id: 2,
     name: 'Fig Noston',
     role: 'The Genius Geologist',
-    bio: 'A genius geologist',
+    bio: 'Fig Noston is the 23-year-old second-in-command of Viveform’s top protection squad for New Alta Izera, Glory Peak. She’s calm, thoughtful, and brilliant. She always seems to know what to do when things go sideways. But that all comes crashing down when a mysterious Sky Pirate digs up old debts, demanding payment for something Fig took from him, threatening to unravel the life she’s fought to build.',
     personality:
       'Calm, thoughtful and highly intelligent, Fig is the stability that keeps the team together.',
     imageUrls: [
@@ -162,9 +162,8 @@ export const CHARACTERS: Character[] = [
     id: 3,
     name: 'Drendith Nosferi',
     role: 'The Dark Showman',
-    bio: 'A gentle giant from a mountain tribe, bound by an ancient oath to protect the sacred lands. He joins the quest when his home is threatened by a dark blight.',
-    personality:
-      'Protective, patient, a man of few words, finds solace in nature, incredibly strong and resilient.',
+    bio: 'Drendith Nosferi comes from the legendary Nosferi family, a famed circus dynasty. He is motivated by a deep desire to restore his family’s honor and seek revenge against Viveform for their role in his family’s downfall.',
+    personality: 'His flamboyant and showy exterior hides a darkness within.',
     imageUrls: [
       'assets/DrendithPort.png',
       'assets/DrenPage1.png',
@@ -178,9 +177,9 @@ export const CHARACTERS: Character[] = [
     id: 4,
     name: 'Ender Valen',
     role: 'The Kingmaker',
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+    bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as intimidating as he is respected, a figure known for his stoic presence and sharp command of any situation. Ender carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
     personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possesed state.*',
     imageUrls: [
       'assets/EnderPort.png',
       'assets/EnderPage1.png',
@@ -194,9 +193,9 @@ export const CHARACTERS: Character[] = [
     id: 5,
     name: 'Kenzi Akimoto',
     role: 'The Royal Rogue',
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+    bio: 'Kenzi was born into prestige, the daughter of an Pleading Council member and heir to a life most people could only dream of. But Kenzi’s determined to earn her place not by bloodline, but by skill and to fight for a world where no one’s born better than anyone else.',
     personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+      'Energetic, bossy, and confident. Kenzi has a fiery attitude that keeps the group on their toes.',
     imageUrls: [
       'assets/KenziPort.png',
       'assets/KenziPage1.png',
@@ -210,9 +209,9 @@ export const CHARACTERS: Character[] = [
     id: 6,
     name: 'Solomon Vex',
     role: 'The Flame Spirit',
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+    bio: 'Vex is a Tier 4 swordsman in Viveform who wields Spirignum, the flame spirit Augur that lets him breathe and control fire during battle. His sword, Zhomei, wrapped in bandages, is a trusted weapon whose origins are as mysterious as his own past.',
     personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+      'Fiery, full of heart and fiercely loyal. Vex loves a good challenge and eats more than anyone else.',
     imageUrls: [
       'assets/VexPort.png',
       'assets/VexPage1.png',
@@ -226,9 +225,9 @@ export const CHARACTERS: Character[] = [
     id: 7,
     name: 'Boca',
     role: "Vex's Pal",
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+    bio: "A red panda child who is Vex's closest companion. Despite his innocent look, Boca has a mischievous streak and a knack for getting into trouble, but his heart is always in the right place. He and Vex want to travel Viso to find out more about their past.",
     personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+      'Innocent but mischievous, with a heart of gold. Extremely curious and driven to explore the world.',
     imageUrls: [
       'assets/BocaPort.png',
       'assets/BocaPage1.png',
@@ -242,9 +241,9 @@ export const CHARACTERS: Character[] = [
     id: 8,
     name: 'Kaz Greenfield',
     role: 'The Gifted Soldier',
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+    bio: 'Kaz has spent his entire life preparing to serve Viveform. Born into a decorated military family, his upbringing was built on discipline, sacrifice, and the belief that glory is earned through unwavering loyalty. Every strike of his greatsword and every flawless command reflect years of training designed to shape him into the perfect soldier. Within Viveform’s ranks, Kaz’s reputation is unmatched, a rising star destined for leadership.',
     personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+      'Disciplined, confident and eager to demonstrate his skills and prowess. A bit cocky at times, though he means well.',
     imageUrls: [
       'assets/KazPort.png',
       'assets/KazPage1.png',
@@ -254,20 +253,20 @@ export const CHARACTERS: Character[] = [
     voiceExamples: voiceKaz,
     voiceRef: 'Rock Howard - Fatal Fury (Griffin Puatu)',
   },
-  {
-    id: 9,
-    name: 'Louisa De Luz',
-    role: 'The Training Captain',
-    bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
-    personality:
-      'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
-    imageUrls: [
-      'assets/LouisaPort.png',
-      'assets/LouisaPage1.png',
-      'assets/LouisaPage2.png',
-      'assets/LouisaPage3.png',
-    ],
-    voiceExamples: voiceLouisa,
-    voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',
-  },
+  // {
+  //   id: 9,
+  //   name: 'Louisa De Luz',
+  //   role: 'The Training Captain',
+  //   bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
+  //   personality:
+  //     'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
+  //   imageUrls: [
+  //     'assets/LouisaPort.png',
+  //     'assets/LouisaPage1.png',
+  //     'assets/LouisaPage2.png',
+  //     'assets/LouisaPage3.png',
+  //   ],
+  //   voiceExamples: voiceLouisa,
+  //   voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',
+  // },
 ];
