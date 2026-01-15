@@ -7,56 +7,172 @@ export const MANGA_TITLE = 'Ye Olde Treehouse';
 export const GOOGLE_FORM_EMBED_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLScSLINyvmaTpTHY6ZpncWQg5Y85QBr2CHtIul5ZT9-0kXFk-A/viewform?embedded=true"';
 
-export const OST_PLAYLIST = [
-  {
-    title: "Atheria's Echoes - Part 1",
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  },
-  {
-    title: "Atheria's Echoes - Part 2",
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-  },
-  {
-    title: "Atheria's Echoes - Part 3",
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-  },
-];
+export const SOCIAL_LINKS = {
+  twitter: 'https://twitter.com/fifimangaka',
+  youtube: 'https://youtube.com/@fifimangaka',
+  instagram: 'https://instagram.com/fifimangaka',
+  patreon: 'https://patreon.com/fifimangaka',
+  readManga: 'https:/yeoldetreehouse.com',
+};
 
-export const GLOBAL_PRONUNCIATIONS = [
-  { term: 'Rou Akei', phonetic: 'ROO Ahh-KAY', category: 'name' },
-  { term: 'Yoroua', phonetic: 'yo-ROU-UHH', category: 'name' },
-  { term: 'Fig Noston', phonetic: 'FIG NAH-stun', category: 'name' },
+export interface PronunciationEntry {
+  term: string;
+  phonetic: string;
+  category: 'name' | 'location' | 'term';
+  audioUrl?: string;
+}
+
+export const GLOBAL_PRONUNCIATIONS: PronunciationEntry[] = [
+  // NAMES
+  {
+    term: 'Rou Akei',
+    phonetic: 'ROO Ahh-KAY',
+    category: 'name',
+    audioUrl: 'assets/RouAkei1.wav',
+  },
+
+  {
+    term: 'Yoroua',
+    phonetic: 'yo-ROU-UHH',
+    category: 'name',
+    audioUrl: 'assets/Yoroua_1.wav',
+  },
+  {
+    term: 'Fig Noston',
+    phonetic: 'FIG NAH-stun',
+    category: 'name',
+    audioUrl: 'assets/FigNoston_1.wav',
+  },
   {
     term: 'Drendith Nosferi',
-    phonetic: 'DREN-dith NOS-FAIRY',
+    phonetic: 'DREN-dith NOHS-FAIRY',
     category: 'name',
+    audioUrl: 'assets/DrendithNosferi_1.wav',
   },
-  { term: 'Ender Valen', phonetic: 'EN-der VAAY-len', category: 'name' },
+  {
+    term: 'Ender Valen',
+    phonetic: 'EN-der VAY-len',
+    category: 'name',
+    audioUrl: 'assets/EnderValen_1.wav',
+  },
   {
     term: 'Kenzi Akimoto',
     phonetic: 'KEN-zee AH-kee-moh-toh',
     category: 'name',
+    audioUrl: 'assets/KenziAkimoto_1.wav',
   },
-  { term: 'Solomon Vex', phonetic: 'SAHL-uhh-muhn VEX', category: 'name' },
-  { term: 'Boca', phonetic: 'BOH-kah', category: 'name' },
-  { term: 'Kaz Greenfield', phonetic: 'KAHZ GREEN-field', category: 'name' },
-  { term: 'Louisa De Luz', phonetic: 'LOO-ee-sah DEH LOOZ', category: 'name' },
-  { term: 'Augur', phonetic: 'Ahh-guhr', category: 'term' },
-  { term: 'Viveform', phonetic: 'VIH-VIH-form', category: 'term' },
+  {
+    term: 'Solomon Vex',
+    phonetic: 'SAHL-oh-mun VEX',
+    category: 'name',
+    audioUrl: 'assets/SolomonVex_1.wav',
+  },
+  {
+    term: 'Boca',
+    phonetic: 'BOH-kah',
+    category: 'name',
+    audioUrl: 'assets/Boca_Name1.wav',
+  },
+  {
+    term: 'Kaz Greenfield',
+    phonetic: 'KAHZ GREEN-field',
+    category: 'name',
+    audioUrl: 'assets/KazGreenfield_1.wav',
+  },
+  {
+    term: 'Koshi Siomus',
+    phonetic: 'KOH-shee sigh-OH-mus',
+    category: 'name',
+    audioUrl: 'assets/KoshiSiomus_1.wav',
+  },
+
+  // LOCATIONS
   {
     term: 'New Alta Izera',
     phonetic: 'NEW ALL-tah ee-ZEER-ah',
     category: 'location',
+    audioUrl: 'assets/NewAltaIzera_1.wav',
   },
   {
     term: 'New Alta Dercha',
     phonetic: 'NEW ALL-tah DER-chah',
     category: 'location',
+    audioUrl: 'assets/NewAltaDercha_1.wav',
   },
-  { term: 'Teleregnum', phonetic: 'TEL-eh-REG-num', category: 'term' },
-  { term: 'Admavis', phonetic: 'AD-may-vis', category: 'term' },
-  { term: 'Spirignum', phonetic: 'SPIH-rihg-num', category: 'term' },
-  { term: 'Perfissio', phonetic: 'per-FIH-SIOH', category: 'term' },
+  {
+    term: 'Glory Peak',
+    phonetic: 'GLOR-ee PEAK',
+    category: 'location',
+    audioUrl: 'assets/GloryPeak_1.wav',
+  },
+  {
+    term: 'Altamerian',
+    phonetic: 'ALT-ah-MER-ee-an',
+    category: 'location',
+    audioUrl: 'assets/Altamerian_1.wav',
+  },
+  {
+    term: 'Laetowood',
+    phonetic: 'LAY-toh-WOOD',
+    category: 'location',
+    audioUrl: 'assets/Laetowood_1.wav',
+  },
+  {
+    term: 'Viso',
+    phonetic: 'Vee-so',
+    category: 'location',
+    audioUrl: 'assets/Viso_1.wav',
+  },
+
+  // TERMINOLOGY
+  {
+    term: 'Augur',
+    phonetic: 'Ahh-guhr',
+    category: 'term',
+    audioUrl: 'assets/Augur_1.wav',
+  },
+  {
+    term: 'Viveform',
+    phonetic: 'VIH-VIH-form',
+    category: 'term',
+    audioUrl: 'assets/Viveform_1.wav',
+  },
+  {
+    term: 'Teleregnum',
+    phonetic: 'TEL-eh-REG-num',
+    category: 'term',
+    audioUrl: 'assets/Teleregnum_1.wav',
+  },
+  {
+    term: 'Admavis',
+    phonetic: 'AD-may-vis',
+    category: 'term',
+    audioUrl: 'assets/Admavis_1.wav',
+  },
+  {
+    term: 'Spirignum',
+    phonetic: 'SPIH-rihg-num',
+    category: 'term',
+    audioUrl: 'assets/Spirignum_1.wav',
+  },
+  {
+    term: 'Perfissio',
+    phonetic: 'per-Fee-See-OH',
+    category: 'term',
+    audioUrl: 'assets/Perfissio_1.wav',
+  },
+  {
+    term: 'Eclose Fist',
+    phonetic: 'I-CLOHS FIST',
+    category: 'term',
+    audioUrl: 'assets/EcloseFist_1.wav',
+  },
+  {
+    term: 'Umbral Tithe',
+    phonetic: 'UM-bral TYTH',
+    category: 'term',
+    audioUrl: 'assets/UmbralTithe_1.wav',
+  },
 ];
 
 const voiceRou = [
@@ -168,7 +284,7 @@ OPTIONAL: (Flirty, Sarcastic) "You know, this would be kinda hot, if you weren�
     ],
     voiceExamples: voiceFig,
     voiceRef: 'Elincia - Fire Emblem (Amanda Miller)',
-    auditionLines: `Line 1: (Warm) "Look at you two! Sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
+    auditionLines: `Line 1: (Warm) "Look at you tw, sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
 
 Line 2: (Determined) "I can’t let her get away! Admavis, Eclose Fist!!" -Chapter 23
 
@@ -194,7 +310,7 @@ Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's 
 
 Line 2: (Maniacal, Passionate) "We will carve out the heart of the beast… In a fashion only a Nosferi could!!" -Chapter 24
 
-Line 3: (Flamboyant, playful) "Darkest truths revealed!! Scandalous secrets exposed!! A Nosferi first! I can hardly contain myself!! -Chapter 13"
+Line 3: (Flamboyant, playful) "Darkest truths revealed!! Scandalous secrets exposed!! A Nosferi first! I can hardly contain myself!!" -Chapter 13
 
 Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned guest… I’ve lost control of my illusions!" -Chapter 20`,
   },
@@ -204,7 +320,7 @@ Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned gu
     role: 'The Kingmaker',
     bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as intimidating as he is respected, a figure known for his stoic presence and sharp command of any situation. Ender carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
     personality:
-      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possesed state.*',
+      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.*',
     imageUrls: [
       'assets/EnderPort.png',
       'assets/EnderPage1.png',
@@ -238,7 +354,7 @@ Line 5: (Mocking, Sarcastic, Obsius) "Unless... You have a powerful telepathic A
     ],
     voiceExamples: voiceKenzi,
     voiceRef: 'Yuffie Kisaragi - Final Fantasy VII Remake (Suzie Yeung)',
-    auditionLines: `Line 1: (Casual, flippant)) "My cuff? Pshh… I’d give it to you, but… I can’t take it off." -Chapter 26
+    auditionLines: `Line 1: (Casual, flippant) "My cuff? Pshh… I’d give it to you, but… I can’t take it off." -Chapter 26
 
 Line 2: (Assertive, Determined) "And I don’t care how important Ordained are to Glory Peak. I’m here to stop you!!" -Chapter 2
 

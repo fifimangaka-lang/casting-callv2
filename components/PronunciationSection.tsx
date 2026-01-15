@@ -1,75 +1,113 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { GLOBAL_PRONUNCIATIONS } from '../constants';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
+import {
+  GLOBAL_PRONUNCIATIONS,
+  MANGA_TITLE,
+  type PronunciationEntry,
+} from '../constants';
 import { Volume2Icon } from './icons/Volume2Icon';
 
 export const PronunciationSection: React.FC = () => {
   const [speakingTerm, setSpeakingTerm] = useState<string | null>(null);
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [errorTerm, setErrorTerm] = useState<string | null>(null);
 
-  // Initialize voices and handle async loading in some browsers
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  // Use a ref to track the current term for the event listeners to avoid stale closures
+  const currentTermRef = useRef<string | null>(null);
+
   useEffect(() => {
-    const updateVoices = () => {
-      const availableVoices = window.speechSynthesis.getVoices();
-      if (availableVoices.length > 0) {
-        setVoices(availableVoices);
-      }
+    // Initialize audio element exactly once
+    const audio = new Audio();
+    audioRef.current = audio;
+
+    const handleEnded = () => {
+      setSpeakingTerm(null);
+      currentTermRef.current = null;
     };
 
-    updateVoices();
-    // Chrome/Edge load voices asynchronously
-    window.speechSynthesis.onvoiceschanged = updateVoices;
+    const handlePlaying = () => {
+      setIsLoading(null);
+      setErrorTerm(null);
+    };
+
+    const handleError = () => {
+      console.error('Audio playback error');
+      const term = currentTermRef.current;
+      if (term) setErrorTerm(term);
+      setSpeakingTerm(null);
+      setIsLoading(null);
+    };
+
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('playing', handlePlaying);
+    audio.addEventListener('error', handleError);
 
     return () => {
-      window.speechSynthesis.cancel();
+      audio.pause();
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('playing', handlePlaying);
+      audio.removeEventListener('error', handleError);
+      audioRef.current = null;
     };
   }, []);
 
   const handlePlayPronunciation = useCallback(
-    (term: string, phonetic?: string) => {
-      if (!window.speechSynthesis) return;
+    (entry: PronunciationEntry) => {
+      const audio = audioRef.current;
+      if (!entry.audioUrl || !audio) return;
 
-      window.speechSynthesis.cancel();
-
-      // Syllable dashes (KAY-len) cause robotic pauses if replaced with spaces.
-      // Removing them entirely (KAYlen) allows the engine to pronounce the word fluently.
-      // Lowercasing prevents the engine from potentially spelling out uppercase letters.
-      const speechText = (phonetic || term)
-        .replace(/-/g, '')
-        .replace(/[\[\]]/g, '')
-        .toLowerCase();
-
-      const utterance = new SpeechSynthesisUtterance(speechText);
-
-      // Voice selection: Prioritize 'Natural', 'Google', or 'Premium' high-quality voices
-      const preferredVoice =
-        voices.find(
-          (v) =>
-            (v.name.includes('Natural') ||
-              v.name.includes('Google') ||
-              v.name.includes('Premium')) &&
-            v.lang.startsWith('en')
-        ) || voices.find((v) => v.lang.startsWith('en'));
-
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
+      // Toggle logic: If clicking the currently playing term, stop it.
+      if (speakingTerm === entry.term) {
+        audio.pause();
+        setSpeakingTerm(null);
+        currentTermRef.current = null;
+        return;
       }
 
-      // Rate 1.0 is essential for natural human rhythm.
-      // Slower rates often trigger a mechanical "syllable-by-syllable" synthesis mode.
-      utterance.rate = 1.0;
-      utterance.pitch = 1.0;
-      utterance.volume = 1.0;
+      // Set UI states
+      setSpeakingTerm(entry.term);
+      setIsLoading(entry.term);
+      setErrorTerm(null);
+      currentTermRef.current = entry.term;
 
-      utterance.onstart = () => setSpeakingTerm(term);
-      utterance.onend = () => setSpeakingTerm(null);
-      utterance.onerror = (e) => {
-        console.error('Speech synthesis error:', e);
-        setSpeakingTerm(null);
-      };
+      // Reset audio state
+      audio.pause();
+      audio.currentTime = 0;
+      audio.src = entry.audioUrl;
 
-      window.speechSynthesis.speak(utterance);
+      // load() is essential before play() when changing sources
+      audio.load();
+
+      // Modern browsers return a promise from play()
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          // We only care about errors if they aren't 'AbortError'
+          // (which happens when we intentionally switch tracks quickly)
+          if (error.name !== 'AbortError') {
+            console.error('Playback failed:', error);
+            setErrorTerm(entry.term);
+            setSpeakingTerm(null);
+            setIsLoading(null);
+          }
+        });
+      }
+
+      // Protection against infinite loading UI if file is missing or network hangs
+      const timeout = setTimeout(() => {
+        if (
+          currentTermRef.current === entry.term &&
+          audio.paused &&
+          !audio.ended
+        ) {
+          setIsLoading(null);
+        }
+      }, 4000);
+
+      return () => clearTimeout(timeout);
     },
-    [voices]
+    [speakingTerm]
   );
 
   const categories = [
@@ -86,35 +124,13 @@ export const PronunciationSection: React.FC = () => {
             Pronunciation Guide
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto font-light mb-8">
-            Guide to pronouncing the names, places and things in Viso.
+            The guide to pronouncing things in{' '}
+            <span className="font-bold font-cinzel text-[#016F93]">
+              {MANGA_TITLE}
+            </span>
+            . Click any term below to hear the official recording and
+            pronunciation.
           </p>
-          {/* Caution Note for Safari Users */}
-          <div className="max-w-2xl mx-auto bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3 text-left shadow-sm">
-            <div className="text-amber-500 mt-0.5 shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div>
-              <p className="text-amber-800 text-sm font-bold">
-                Note for Safari users:
-              </p>
-              <p className="text-amber-700 text-xs mt-1 leading-relaxed">
-                Safari's built-in pronunciation engine may sound distorted or
-                robotic. For the intended pronunciation, we highly recommend
-                using desktop <strong>Google Chrome</strong>.
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -125,52 +141,104 @@ export const PronunciationSection: React.FC = () => {
               </h3>
               <div className="space-y-3">
                 {GLOBAL_PRONUNCIATIONS.filter((p) => p.category === cat.id).map(
-                  (p, i) => (
-                    <button
-                      key={i}
-                      onClick={() =>
-                        handlePlayPronunciation(p.term, p.phonetic)
-                      }
-                      className={`w-full group flex items-center justify-between p-4 bg-white border rounded-xl transition-all text-left shadow-sm hover:shadow-md
-                      ${
-                        speakingTerm === p.term
-                          ? 'border-[#016F93] ring-2 ring-[#016F93]/20 bg-[#f0f9fb]'
-                          : 'border-slate-200 hover:border-[#016F93]'
-                      }`}
-                    >
-                      <div className="flex-1">
-                        <div
-                          className={`font-bold transition-colors ${
-                            speakingTerm === p.term
-                              ? 'text-[#016F93]'
-                              : 'text-slate-800'
-                          }`}
-                        >
-                          {p.term}
-                        </div>
-                        {p.phonetic && (
-                          <div className="text-xs text-[#016F93]/70 italic font-medium">
-                            [{p.phonetic}]
-                          </div>
-                        )}
-                      </div>
-                      <div
-                        className={`${
-                          speakingTerm === p.term
-                            ? 'text-[#016F93] animate-pulse'
-                            : 'text-slate-300 group-hover:text-[#016F93]'
-                        } transition-colors`}
+                  (p, i) => {
+                    const hasAudio = !!p.audioUrl;
+                    const isPlaying = speakingTerm === p.term;
+                    const isBuffering = isLoading === p.term;
+                    const isErrored = errorTerm === p.term;
+
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => handlePlayPronunciation(p)}
+                        disabled={!hasAudio}
+                        className={`w-full group flex items-center justify-between p-4 bg-white border rounded-xl transition-all text-left shadow-sm
+                        ${
+                          isPlaying || isBuffering
+                            ? 'border-[#016F93] ring-2 ring-[#016F93]/20 bg-[#f0f9fb]'
+                            : isErrored
+                            ? 'border-red-400 bg-red-50'
+                            : 'border-slate-200 hover:border-[#016F93] hover:shadow-md'
+                        }
+                        ${
+                          !hasAudio
+                            ? 'opacity-40 grayscale cursor-not-allowed'
+                            : 'active:scale-[0.98]'
+                        }`}
+                        title={
+                          !hasAudio
+                            ? 'Audio coming soon'
+                            : isErrored
+                            ? 'Click to retry'
+                            : 'Play pronunciation'
+                        }
                       >
-                        <Volume2Icon />
-                      </div>
-                    </button>
-                  )
+                        <div className="flex-1">
+                          <div
+                            className={`font-bold transition-colors ${
+                              isPlaying || isBuffering
+                                ? 'text-[#016F93]'
+                                : isErrored
+                                ? 'text-red-500'
+                                : 'text-slate-800'
+                            }`}
+                          >
+                            {p.term}
+                          </div>
+                          {p.phonetic && (
+                            <div
+                              className={`text-xs italic font-medium ${
+                                isErrored ? 'text-red-400' : 'text-[#016F93]/70'
+                              }`}
+                            >
+                              [{p.phonetic}]
+                            </div>
+                          )}
+                        </div>
+                        <div
+                          className={`${
+                            isPlaying || isBuffering
+                              ? 'text-[#016F93]'
+                              : isErrored
+                              ? 'text-red-400'
+                              : 'text-slate-300 group-hover:text-[#016F93]'
+                          } transition-colors`}
+                        >
+                          {isBuffering ? (
+                            <div className="flex gap-1">
+                              <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                              <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                              <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce"></div>
+                            </div>
+                          ) : isPlaying ? (
+                            <div className="flex items-end gap-0.5 h-4 mb-1">
+                              <div className="w-0.5 bg-current animate-[music-bar_0.5s_ease-in-out_infinite] h-full"></div>
+                              <div className="w-0.5 bg-current animate-[music-bar_0.7s_ease-in-out_infinite] h-2/3"></div>
+                              <div className="w-0.5 bg-current animate-[music-bar_0.4s_ease-in-out_infinite] h-1/2"></div>
+                            </div>
+                          ) : isErrored ? (
+                            <span className="text-[10px] font-black uppercase">
+                              Retry
+                            </span>
+                          ) : (
+                            <Volume2Icon />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  }
                 )}
               </div>
             </div>
           ))}
         </div>
       </div>
+      <style>{`
+        @keyframes music-bar {
+          0%, 100% { height: 4px; }
+          50% { height: 16px; }
+        }
+      `}</style>
     </section>
   );
 };

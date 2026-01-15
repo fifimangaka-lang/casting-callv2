@@ -7,104 +7,233 @@ interface ProjectSpecsProps {
 
 export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
   return (
-    <section id="project" className="py-20 md:py-28 bg-white text-[#0E5B6D]">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-cinzel text-center mb-12 text-[#0E5B6D]">
-          Project Details
-        </h2>
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
+    <section
+      id="project"
+      className="py-24 md:py-32 bg-slate-50 relative overflow-hidden border-t border-slate-200"
+    >
+      {/* Ambient Light Accents */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E0F7FA] blur-[120px] rounded-full pointer-events-none opacity-60"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#016F93]/5 blur-[100px] rounded-full pointer-events-none opacity-40"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16 md:mb-20">
+          <div className="inline-block mb-4">
+            <div className="flex items-center justify-center gap-4 text-[#016F93]">
+              <div className="h-px w-8 md:w-20 bg-gradient-to-r from-transparent to-current opacity-30"></div>
+              <h2 className="text-3xl md:text-5xl font-bold font-cinzel tracking-[0.2em] uppercase text-[#014d66]">
+                Project Details
+              </h2>
+              <div className="h-px w-8 md:w-20 bg-gradient-to-l from-transparent to-current opacity-30"></div>
+            </div>
+          </div>
+          <p className="text-slate-500 max-w-2xl mx-auto font-light text-lg md:text-xl leading-relaxed">
+            Everything you need to know about joining the production of{' '}
+            <span className="text-[#016F93] font-bold font-cinzel tracking-wider">
+              {MANGA_TITLE}
+            </span>
+            .
+          </p>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
+          {/* Synopsis */}
+          <div className="group bg-white/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-[#016F93]/10 hover:border-[#016F93]/40 transition-all duration-500 shadow-xl shadow-[#016F93]/5">
+            <h3 className="text-2xl font-bold font-cinzel text-[#014d66] mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-6 bg-[#016F93] rounded-full group-hover:scale-y-125 transition-transform origin-bottom"></span>
               Synopsis
             </h3>
-            <p className=" leading-relaxed">
-              A mind-reading captain, a diamond-fisted genius, and a
+            <p className="text-slate-600 text-lg leading-relaxed font-normal">
+              A mind-reading captain, a genius with diamond fists, and a
               fire-breathing swordsman hunt a rogue ringmaster whose forbidden
               magic defies the law. But when the chase exposes corruption within
               their own ranks, their mission and their loyalties begin to
               unravel.
             </p>
           </div>
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
+
+          {/* Scope */}
+          <div className="group bg-white/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-[#016F93]/10 hover:border-[#016F93]/40 transition-all duration-500 shadow-xl shadow-[#016F93]/5">
+            <h3 className="text-2xl font-bold font-cinzel text-[#014d66] mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-6 bg-[#016F93] rounded-full group-hover:scale-y-125 transition-transform origin-bottom"></span>
               Project Scope
             </h3>
-            <p className=" leading-relaxed">
+            <p className="text-slate-600 text-lg leading-relaxed font-normal">
               We are casting for the main roles in an upcoming comic dub
-              adaptation of the fantasy adventure manga "Ye Olde Treehouse". The
+              adaptation of the fantasy adventure manga "{MANGA_TITLE}". The
               total project will encompass the "Nosferi Dilemma" Arc; Volumes
               1-5. This website is updated regularly with new roles, so be sure
               to check back often!
             </p>
           </div>
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
+
+          {/* Requirements */}
+          <div className="group bg-white/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-[#016F93]/10 hover:border-[#016F93]/40 transition-all duration-500 shadow-xl shadow-[#016F93]/5">
+            <h3 className="text-2xl font-bold font-cinzel text-[#014d66] mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-6 bg-[#016F93] rounded-full group-hover:scale-y-125 transition-transform origin-bottom"></span>
               Requirements
             </h3>
-            <ul className="list-disc list-inside space-y-2">
-              <li>
-                Audition files must be either <strong>MP3</strong> or{' '}
-                <strong>WAV</strong>.
+            <ul className="space-y-4 text-slate-600 text-lg">
+              <li className="flex items-start gap-3">
+                <span className="text-[#016F93] font-bold mt-1 scale-125">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Audition files must be either{' '}
+                  <strong className="text-slate-900">MP3</strong> or{' '}
+                  <strong className="text-slate-900">WAV</strong>.
+                </span>
               </li>
-              <li>
-                Files must be labeled as <strong>Character_YourName</strong>{' '}
-                (e.g., Rou_JohnDoe).
+              <li className="flex items-start gap-3">
+                <span className="text-[#016F93] font-bold mt-1 scale-125">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Files must be labeled as{' '}
+                  <strong className="text-slate-900">Character_YourName</strong>{' '}
+                  (e.g., Rou_JohnDoe).
+                </span>
               </li>
-              <li>
-                Please record <strong>at least two takes</strong> per line.
+              <li className="flex items-start gap-3">
+                <span className="text-[#016F93] font-bold mt-1 scale-125">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Please record{' '}
+                  <strong className="text-slate-900">at least two takes</strong>{' '}
+                  per line.
+                </span>
               </li>
-              <li>
-                Prior voice acting experience is preferred but not required.
+              <li className="flex items-start gap-3">
+                <span className="text-[#016F93] font-bold mt-1 scale-125">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Prior voice acting experience is preferred but not required.
+                </span>
               </li>
             </ul>
           </div>
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
+
+          {/* Payment */}
+          <div className="group bg-white/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-[#016F93]/10 hover:border-[#016F93]/40 transition-all duration-500 shadow-xl shadow-[#016F93]/5">
+            <h3 className="text-2xl font-bold font-cinzel text-[#014d66] mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-6 bg-[#016F93] rounded-full group-hover:scale-y-125 transition-transform origin-bottom"></span>
               Payment Details
             </h3>
-            <p className="leading-relaxed mb-4">
-              This is a <strong>PAID</strong> voice acting casting call. Please
-              note, this is an <strong>indie project</strong> with 1 staff
-              member (Me, Sam!) creating story and art for the manga, building
-              the websites, and handling all other production.
+            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+              This is a{' '}
+              <strong className="text-slate-900 uppercase">PAID</strong> voice
+              acting casting call. Please note, this is an indie project with 1
+              staff member (Me, Sam!) creating story and art for the manga,
+              building the websites, and handling all other production.
             </p>
-            <div className="space-y-1">
-              <p className="font-bold">Payment Rate:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>$3 USD per line</li>
-                <li>
-                  Rates follow the{' '}
-                  <a
-                    href="https://voiceactingclub.com/rates/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#016F93] hover:underline font-semibold"
-                  >
-                    Voice Acting Club Indie Rate Guide
-                  </a>
+            <div className="p-5 bg-[#E0F7FA]/30 rounded-xl border border-[#016F93]/10 shadow-inner">
+              <p className="font-bold text-[#014d66] uppercase tracking-widest text-xs mb-3">
+                Payment Rate:
+              </p>
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#016F93]"></div>
+                  <span className="font-bold text-slate-900">
+                    $3 USD per line
+                  </span>
                 </li>
-                <li>
-                  Payment made via <strong>Paypal</strong>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#016F93]"></div>
+                  <span className="text-sm">
+                    Rates follow the{' '}
+                    <a
+                      href="https://voiceactingclub.com/rates/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#016F93] font-bold hover:underline"
+                    >
+                      Voice Acting Club Indie Rate Guide
+                    </a>
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#016F93]"></div>
+                  <span className="text-sm">
+                    Payment made via{' '}
+                    <strong className="text-slate-900">Paypal</strong>
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
-          <div
+
+          {/* Luminous CTA Audition Card */}
+          <div 
             id="apply"
-            className="bg-gray-50 p-6 rounded-lg border border-gray-200 md:col-span-2 text-center"
+            className="md:col-span-2 bg-gradient-to-br from-[#016F93] to-[#014d66] p-10 md:p-16 rounded-3xl text-center shadow-2xl relative group overflow-hidden"
           >
-            <h3 className="text-xl font-bold font-cinzel text-[#0E5B6D] mb-4">
-              Audition
+            {/* Animated BG Decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+
+            <h3 className="text-3xl md:text-5xl font-bold font-cinzel text-white mb-6 tracking-wider relative z-10">
+              Ready to Audition?
             </h3>
-            <p className=" leading-relaxed mb-6">
-              Fill out the application to submit your audition! Submissions
-              close on March 31st.
+            <p className="text-[#E0F7FA] text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
+              Submit your audition using our form below. Good luck! Submissions
+              for the current season close on{' '}
+              <span className="text-white font-bold underline decoration-white/30 underline-offset-8">
+                March 31st
+              </span>
+              .
             </p>
             <button
               onClick={onApplyClick}
-              className="bg-[#006E92] text-white font-bold py-3 px-8 rounded-full hover:bg-[#005c7a] transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#006E92]/30"
+              className="bg-white text-[#014d66] font-bold py-5 px-12 rounded-full hover:bg-[#E0F7FA] transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-black/20 uppercase tracking-[0.3em] font-cinzel text-sm group relative z-10 active:scale-95"
             >
               Open Audition Form
+              <span className="inline-block ml-3 transform group-hover:translate-x-1 transition-transform">
+                →
+              </span>
             </button>
           </div>
         </div>
