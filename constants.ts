@@ -265,7 +265,7 @@ Line 3: (Determined, Fired up) "You won’t get past this captain!! Teleregnum! 
 
 Line 4: (Insecure, Concerned) "Why did you make me captain of the New Alta Izera squad... When Kaz was right there? " -Chapter 16
 
-Line 5: (Encouraging, Warm) "Don’t you dare say that, soldier!! We’re only here because he trusts us to keep Glory Peak safe!!" -Chapter 23
+Line 5: (Intense, Unsure) "Don’t you dare say that, soldier!! We’re only here because he trusts us to keep Glory Peak safe!!" -Chapter 23
 
 OPTIONAL: (Flirty, Sarcastic) "You know, this would be kinda hot, if you weren’t such an asshole." -Chapter 26`,
   },
@@ -284,11 +284,11 @@ OPTIONAL: (Flirty, Sarcastic) "You know, this would be kinda hot, if you weren�
     ],
     voiceExamples: voiceFig,
     voiceRef: 'Elincia - Fire Emblem (Amanda Miller)',
-    auditionLines: `Line 1: (Warm) "Look at you tw, sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
+    auditionLines: `Line 1: (Warm) "Look at you two, sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
 
 Line 2: (Determined) "I can’t let her get away! Admavis, Eclose Fist!!" -Chapter 23
 
-Line 3: (Sly, humorous) "Sky pirates don’t chase kiddos… So this is the safest group to travel with." -Chapter 15
+Line 3: (Sly, humorous) "Sky pirates don’t chase kiddos… So this is the safest group to travel with!" -Chapter 15
 
 Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's absolutely no way anyone can have it." -Chapter 22`,
   },
