@@ -12,7 +12,7 @@ export const SOCIAL_LINKS = {
   youtube: 'https://youtube.com/@fifimangaka',
   instagram: 'https://instagram.com/fifimangaka',
   patreon: 'https://patreon.com/fifimangaka',
-  readManga: 'https:/yeoldetreehouse.com',
+  readManga: 'https://yeoldetreehouse.com',
 };
 
 export interface PronunciationEntry {

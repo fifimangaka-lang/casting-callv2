@@ -30,12 +30,13 @@ export const ApplyForm: React.FC = () => {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing again
+    // Clear errors when user starts typing again
     if (submitError) setSubmitError('');
+    if (fileError) setFileError('');
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +49,7 @@ export const ApplyForm: React.FC = () => {
       const fileName = selectedFile.name.toLowerCase();
 
       const hasValidExtension = allowedExtensions.some((ext) =>
-        fileName.endsWith(ext)
+        fileName.endsWith(ext),
       );
       const isSizeValid = selectedFile.size <= MAX_FILE_SIZE;
 
@@ -62,7 +63,7 @@ export const ApplyForm: React.FC = () => {
         setFile(null);
         const sizeInMb = (selectedFile.size / (1024 * 1024)).toFixed(2);
         setFileError(
-          `Error: File is too large (${sizeInMb}MB). Maximum size is 8MB.`
+          `Error: File is too large (${sizeInMb}MB). Maximum size is 8MB.`,
         );
         setShowLinkInput(true); // Trigger visibility of Google Drive link input
 
@@ -80,9 +81,20 @@ export const ApplyForm: React.FC = () => {
     return re.test(email.toLowerCase());
   };
 
+  const validateGoogleDriveLink = (link: string) => {
+    // Check if it's a Google Drive link
+    const googleDrivePatterns = [
+      /^https?:\/\/drive\.google\.com\//,
+      /^https?:\/\/docs\.google\.com\/file\//,
+    ];
+
+    return googleDrivePatterns.some((pattern) => pattern.test(link));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError('');
+    setFileError('');
 
     // Email validation
     if (!validateEmail(formData.email)) {
@@ -92,7 +104,7 @@ export const ApplyForm: React.FC = () => {
 
     if (formData.age === 'under-18') {
       setSubmitError(
-        'Sorry, you must be 18 or older to submit an audition for this project.'
+        'You must be 18 or older to submit an audition for this project.',
       );
       return;
     }
@@ -100,13 +112,19 @@ export const ApplyForm: React.FC = () => {
     // Validation: Require either a file OR a Google Drive link
     if (!file && !formData.googleDriveLink) {
       setFileError(
-        'Please upload an audition file or provide a Google Drive link.'
+        'Please upload an audition file or provide a Google Drive link.',
       );
       return;
     }
 
-    if (!file) {
-      setFileError('Please upload an audition file before submitting.');
+    // If Google Drive link is provided, validate it
+    if (
+      formData.googleDriveLink &&
+      !validateGoogleDriveLink(formData.googleDriveLink)
+    ) {
+      setSubmitError(
+        'Please provide a valid Google Drive link (must be from drive.google.com or docs.google.com).',
+      );
       return;
     }
 
@@ -114,7 +132,7 @@ export const ApplyForm: React.FC = () => {
 
     // Using FormData to handle file upload for Netlify
     const netlifyData = new FormData();
-    netlifyData.append('form-name', 'casting-call'); // Must match the name in index.html
+    netlifyData.append('form-name', 'casting-call');
     netlifyData.append('name', formData.name);
     netlifyData.append('email', formData.email);
     netlifyData.append('age', formData.age);
@@ -139,12 +157,12 @@ export const ApplyForm: React.FC = () => {
         setIsSuccess(true);
       } else {
         setSubmitError(
-          'Submission failed. Please check your connection or try again.'
+          'Submission failed. Please check your connection or try again.',
         );
       }
     } catch (err) {
       setSubmitError(
-        'An error occurred during submission. Please try again later.'
+        'An error occurred during submission. Please try again later.',
       );
     } finally {
       setIsSubmitting(false);
@@ -218,9 +236,9 @@ export const ApplyForm: React.FC = () => {
           </h1>
           <div className="space-y-6 text-xl text-slate-300 leading-relaxed">
             <p>
-              This is a paid casting call for the comic dub{' '}
-              <span className="text-white font-bold">{MANGA_TITLE}</span>.
-              Submissions are handled securely via our internal stack.
+              Submit your audition for the comic voice-over of
+              <span className="text-white font-bold"> {MANGA_TITLE}</span>. Got
+              a question? Email fifimangaka@gmail.com.
             </p>
           </div>
         </header>
@@ -384,7 +402,8 @@ export const ApplyForm: React.FC = () => {
                 Audition Audio
               </h3>
               <p className="text-xl text-slate-400 italic">
-                Upload your .wav or .mp3 audition file. 8MB max size.
+                Upload a .wav or .mp3 file (8MB max) or provide a Google Drive
+                link.
               </p>
             </div>
 
@@ -431,36 +450,43 @@ export const ApplyForm: React.FC = () => {
                 </div>
               )}
 
-              {showLinkInput && (
-                <div className="mt-8 space-y-4 pt-8 border-t border-slate-700 animate-fade-in">
-                  <label className="block text-xl font-bold text-[#E0F7FA] text-center">
-                    Audition file too large? Use a google drive link instead!
-                  </label>
-                  <input
-                    type="url"
-                    name="googleDriveLink"
-                    value={formData.googleDriveLink}
-                    onChange={handleInputChange}
-                    placeholder="https://drive.google.com/..."
-                    className="w-full bg-slate-900 border border-[#016F93]/50 rounded-xl p-5 text-xl focus:border-[#016F93] outline-none transition-colors"
-                  />
-                  <p className="text-sm text-slate-400 text-center italic">
-                    Make sure link permissions are set to "Anyone with the
-                    link".
-                  </p>
-                </div>
-              )}
+              {/* Google Drive Link Section - Always visible OR shown when file is too large */}
+              <div
+                className={`space-y-4 pt-8 border-t border-slate-700 ${showLinkInput ? 'animate-fade-in' : ''}`}
+              >
+                <label className="block text-xl font-bold text-[#E0F7FA] text-center">
+                  {showLinkInput
+                    ? 'File too large? Use a Google Drive link instead!'
+                    : 'Or provide a Google Drive link:'}
+                </label>
+                <input
+                  type="url"
+                  name="googleDriveLink"
+                  value={formData.googleDriveLink}
+                  onChange={handleInputChange}
+                  placeholder="https://drive.google.com/file/d/..."
+                  className={`w-full bg-slate-900 border rounded-xl p-5 text-xl focus:border-[#016F93] outline-none transition-colors ${
+                    formData.googleDriveLink &&
+                    !validateGoogleDriveLink(formData.googleDriveLink)
+                      ? 'border-red-500/50'
+                      : 'border-[#016F93]/50'
+                  }`}
+                />
+                <p className="text-sm text-slate-400 text-center italic">
+                  Make sure link permissions are set to "Anyone with the link".
+                </p>
+              </div>
             </div>
           </div>
 
           {submitError && (
-            <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-xl text-red-400 text-center font-bold text-xl animate-bounce">
+            <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-xl text-red-400 text-center font-bold text-xl">
               {submitError}
             </div>
           )}
           <button
             type="submit"
-            disabled={isSubmitting || formData.age === 'under-18'}
+            disabled={isSubmitting}
             className="w-full bg-[#016F93] hover:bg-[#0288ad] hover:scale-[1.02] active:scale-[0.98] text-white font-bold py-6 rounded-2xl shadow-xl shadow-[#016F93]/20 hover:shadow-[#016F93]/40 disabled:bg-slate-700 disabled:shadow-none disabled:scale-100 transition-all flex items-center justify-center gap-4 text-2xl font-cinzel tracking-wide mt-8 cursor-pointer disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
