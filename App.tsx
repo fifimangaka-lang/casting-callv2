@@ -14,7 +14,7 @@ import { PronunciationSection } from './components/PronunciationSection';
 
 function App() {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
-    null
+    null,
   );
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
@@ -45,7 +45,7 @@ function App() {
         />
         <ProjectSpecs onApplyClick={handleOpenApplyModal} />
         <PronunciationSection />
-        <EmailSignup />
+        {/* <EmailSignup /> */}
       </main>
       <Footer />
       {selectedCharacter && (

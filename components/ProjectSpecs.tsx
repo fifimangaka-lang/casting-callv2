@@ -58,11 +58,11 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
               Project Scope
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed font-normal">
-              We are casting for the main roles in an upcoming comic dub
-              adaptation of the fantasy adventure manga "{MANGA_TITLE}". The
-              total project will encompass the "Nosferi Dilemma" Arc; Volumes
-              1-5. This website is updated regularly with new roles, so be sure
-              to check back often!
+              We are casting for the main roles in an upcoming comic voice-over
+              of the fantasy adventure manga "{MANGA_TITLE}". The total project
+              will encompass the "Nosferi Dilemma" Arc; Volumes 1-5. This
+              website is updated regularly with new roles, so be sure to check
+              back often!
             </p>
           </div>
 
@@ -168,8 +168,8 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
               This is a{' '}
               <strong className="text-slate-900 uppercase">PAID</strong> voice
               acting casting call. Please note, this is an indie project with 1
-              staff member (Me, Sam!) creating story and art for the manga,
-              building the websites, and handling all other production.
+              staff member (Sam) creating story and art for the manga, building
+              the websites, and handling all other production.
             </p>
             <div className="p-5 bg-[#E0F7FA]/30 rounded-xl border border-[#016F93]/10 shadow-inner">
               <p className="font-bold text-[#014d66] uppercase tracking-widest text-xs mb-3">
@@ -208,7 +208,7 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
           </div>
 
           {/* Luminous CTA Audition Card */}
-          <div 
+          <div
             id="apply"
             className="md:col-span-2 bg-gradient-to-br from-[#016F93] to-[#014d66] p-10 md:p-16 rounded-3xl text-center shadow-2xl relative group overflow-hidden"
           >

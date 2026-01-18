@@ -25,7 +25,7 @@ export const CharacterGrid: React.FC<CharacterGridProps> = ({
             </div>
           </div>
           <p className="text-slate-500 max-w-2xl mx-auto font-light text-lg md:text-xl leading-relaxed">
-            The characters thrusted together by the whims of fate.
+            The characters below are currently avaiable for auditioning.
           </p>
         </div>
 

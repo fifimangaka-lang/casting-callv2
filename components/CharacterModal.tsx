@@ -77,14 +77,14 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
     setCurrentImageIndex(
       (prevIndex) =>
         (prevIndex - 1 + character.imageUrls.length) %
-        character.imageUrls.length
+        character.imageUrls.length,
     );
   };
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentImageIndex(
-      (prevIndex) => (prevIndex + 1) % character.imageUrls.length
+      (prevIndex) => (prevIndex + 1) % character.imageUrls.length,
     );
   };
 
@@ -107,21 +107,42 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
       .filter((l) => l.trim())
       .map((line) => {
         const isOptional = line.trim().toUpperCase().startsWith('OPTIONAL:');
-        const cleanLine = line.replace(/^OPTIONAL:\s*/i, '');
+        const cleanLine = line.replace(/^OPTIONAL:\s*/i, '').trim();
 
-        const regex = /^([^:]+):\s*\(([^)]+)\)\s*"([^"]+)"\s*(.*)$/i;
-        const match = cleanLine.match(regex);
+        // Pattern 1: Label: (Tone) "Dialogue" Context
+        const regexWithLabel = /^([^:]+):\s*\(([^)]+)\)\s*"([^"]+)"\s*(.*)$/i;
+        // Pattern 2: (Tone) "Dialogue" Context (no label)
+        const regexNoLabel = /^\(([^)]+)\)\s*"([^"]+)"\s*(.*)$/i;
 
-        if (match) {
+        const matchWithLabel = cleanLine.match(regexWithLabel);
+        if (matchWithLabel) {
           return {
-            label: match[1].trim(),
-            tone: match[2].trim(),
-            dialogue: match[3].trim(),
-            context: match[4].trim().replace(/^-/, '').trim(),
+            label: matchWithLabel[1].trim(),
+            tone: matchWithLabel[2].trim(),
+            dialogue: matchWithLabel[3].trim(),
+            context: matchWithLabel[4].trim().replace(/^-/, '').trim(),
             isOptional,
           };
         }
-        return { label: '', tone: '', dialogue: line, context: '', isOptional };
+
+        const matchNoLabel = cleanLine.match(regexNoLabel);
+        if (matchNoLabel) {
+          return {
+            label: '',
+            tone: matchNoLabel[1].trim(),
+            dialogue: matchNoLabel[2].trim(),
+            context: matchNoLabel[3].trim().replace(/^-/, '').trim(),
+            isOptional,
+          };
+        }
+
+        return {
+          label: '',
+          tone: '',
+          dialogue: cleanLine,
+          context: '',
+          isOptional,
+        };
       });
   };
 
@@ -176,8 +197,8 @@ export const CharacterModal: React.FC<CharacterModalProps> = ({
             areLinesVisible
               ? 'h-[40vh] md:h-[50vh] w-full'
               : isMangaPage
-              ? 'h-[35vh] md:h-full'
-              : 'h-[45vh] sm:h-[55vh] md:h-full'
+                ? 'h-[35vh] md:h-full'
+                : 'h-[45vh] sm:h-[55vh] md:h-full'
           }`}
         >
           <div

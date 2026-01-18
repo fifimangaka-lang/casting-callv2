@@ -246,9 +246,9 @@ export const CHARACTERS: Character[] = [
     id: 1,
     name: 'Rou Akei',
     role: 'The Unlikely Captain',
-    bio: "Rou is the Captain of Viveform’s top protection squad, based in New Alta Izera, Glory Peak. She’s a bit unorthodox, often charging ahead before fully thinking things through, but that same impulsiveness is driven by passion, loyalty, and an unshakable sense of justice. She's determined to prove herself to the world.",
+    bio: 'Rou is the Captain of Viveform’s top protection squad, based in New Alta Izera, Glory Peak. She’s a bit unorthodox, often charging ahead before fully thinking things through, but that same impulsiveness is driven by passion, loyalty, and an unshakable sense of justice. After joining Viveform she met Commander Ender Valen, the first real “friend” she ever had. He promoted her to Captain when nearly the entire organization doubted her. That trust means everything to Rou, even if she struggles to show it.',
     personality:
-      'Impulsive but heartfelt, she acts on instinct and emotion more than caution. Bright and energetic, with a sassy undertone.',
+      'Impulsive but heartfelt, she acts on instinct and emotion more than caution. Bright and energetic, with a sassy undertone. Rou has the power to see into the future with her Augur, Teleregnum. (23-27yo)',
     imageUrls: [
       'assets/RouPort.png',
       'assets/RouPage1.png',
@@ -261,9 +261,9 @@ export const CHARACTERS: Character[] = [
 
 Line 2: (Cheeky, Playful) "It's free to use your brain, Solomon. If you fell off of Big Drop, we wouldn't be talking right now!" -Chapter 14
 
-Line 3: (Determined, Fired up) "You won’t get past this captain!! Teleregnum! Seer’s Razor! " -Chapter 20
+Line 3: (Determined, Fired up) "You won’t get past this Captain!! Teleregnum! Seer’s Razor! " -Chapter 20
 
-Line 4: (Insecure, Concerned) "Why did you make me captain of the New Alta Izera squad... When Kaz was right there? " -Chapter 16
+Line 4: (Insecure, Concerned) "Why did you make me Captain of the New Alta Izera squad...when Kaz was right there? " -Chapter 16
 
 Line 5: (Intense, Unsure) "Don’t you dare say that, soldier!! We’re only here because he trusts us to keep Glory Peak safe!!" -Chapter 23
 
@@ -273,9 +273,9 @@ OPTIONAL: (Flirty, Sarcastic) "You know, this would be kinda hot, if you weren�
     id: 2,
     name: 'Fig Noston',
     role: 'The Genius Geologist',
-    bio: 'Fig Noston is the 23-year-old second-in-command of Viveform’s top protection squad for New Alta Izera, Glory Peak. She’s calm, thoughtful, and brilliant. She always seems to know what to do when things go sideways. But that all comes crashing down when a mysterious Sky Pirate digs up old debts, demanding payment for something Fig took from him, threatening to unravel the life she’s fought to build.',
+    bio: 'Fig Noston is the second-in-command of Viveform’s top protection squad for New Alta Izera, Glory Peak. She’s calm, thoughtful, brilliant and always seems to know what to do when things go sideways. But that all comes crashing down when a mysterious Sky Pirate digs up old debts, demanding payment for something Fig took from him. Threatening to unravel the life she’s fought to build.',
     personality:
-      'Calm, thoughtful and highly intelligent, Fig is the stability that keeps the team together.',
+      'Gentle, practical and focused under pressure. Fig is the stability that keeps the team together. Fig has the power to turn to diamond with her Augur, Admavis. (23-25yo)',
     imageUrls: [
       'assets/FigPort.png',
       'assets/FigPage1.png',
@@ -284,9 +284,9 @@ OPTIONAL: (Flirty, Sarcastic) "You know, this would be kinda hot, if you weren�
     ],
     voiceExamples: voiceFig,
     voiceRef: 'Elincia - Fire Emblem (Amanda Miller)',
-    auditionLines: `Line 1: (Warm) "Look at you two, sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
+    auditionLines: `Line 1: (Warm, Proud) "Look at you two, sounding like real Regulation agents! Commander Ender would be proud!" -Chapter 15
 
-Line 2: (Determined) "I can’t let her get away! Admavis, Eclose Fist!!" -Chapter 23
+Line 2: (Determined, Fiery) "I can’t let her get away! Admavis, Eclose Fist!!" -Chapter 23
 
 Line 3: (Sly, humorous) "Sky pirates don’t chase kiddos… So this is the safest group to travel with!" -Chapter 15
 
@@ -296,8 +296,9 @@ Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's 
     id: 3,
     name: 'Drendith Nosferi',
     role: 'The Dark Showman',
-    bio: 'Drendith Nosferi comes from the legendary Nosferi family, a famed circus dynasty. He is motivated by a deep desire to restore his family’s honor and seek revenge against Viveform for their role in his family’s downfall.',
-    personality: 'His flamboyant and showy exterior hides a darkness within.',
+    bio: "Drendith Nosferi comes from the legendary Nosferi family, a famed circus dynasty in Glory Peak. It's suspected he wields a dangerous and outlawed magic to perform his circus shows, and was placed under surveillance by Viveform. Under the glitz of performance, Drendith is motivated by a deep desire to restore his family’s honor and seek revenge against Viveform for their role in their catastrophic downfall.",
+    personality:
+      'Flamboyant, showy and flirty. His peacock like exterior hides a deep darkness within. Drendith has the power to create powerful illusions with his Augur, Perfissio. (30-35yo)',
     imageUrls: [
       'assets/DrendithPort.png',
       'assets/DrenPage1.png',
@@ -308,7 +309,7 @@ Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's 
     voiceRef: "Astarion - Baldur's Gate 3 (Neil Newbon)",
     auditionLines: `Line 1: (Ominous, Polite) "A warm welcome to Altamerian… on behalf of the Nosferi family." -Chapter 28
 
-Line 2: (Maniacal, Passionate) "We will carve out the heart of the beast… In a fashion only a Nosferi could!!" -Chapter 24
+Line 2: (Maniacal, Passionate) "We will carve out the heart of the beast… in a fashion only a Nosferi could!!" -Chapter 24
 
 Line 3: (Flamboyant, playful) "Darkest truths revealed!! Scandalous secrets exposed!! A Nosferi first! I can hardly contain myself!!" -Chapter 13
 
@@ -318,9 +319,9 @@ Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned gu
     id: 4,
     name: 'Ender Valen',
     role: 'The Kingmaker',
-    bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as intimidating as he is respected, a figure known for his stoic presence and sharp command of any situation. Ender carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
+    bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as feared as he is respected, a figure known for his stoic presence and sharp command of any situation. He carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
     personality:
-      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.*',
+      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.* (30-38 yo)',
     imageUrls: [
       'assets/EnderPort.png',
       'assets/EnderPage1.png',
@@ -330,22 +331,23 @@ Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned gu
     voiceExamples: voiceEnder,
     voiceRef: "Tav 1 - Baldur's Gate 3 (Josh Wichard)",
     auditionLines: `Line 1: (In thought) "Sending your illusions through the Port Oak to evade us... you've always been clever, Drendith." -Chapter 16
- 
-Line 2: (Breathy, Amused, Obsius) "'Ya caught me off guard! feel special?! Umbral Tithe!" -Chapter 25
 
-Line 3: (Playful, humorous) "Oh! Hahaha! Y-yes, quite!! Made for people with iron grip and iron stress!" -Chapter 16
 
-Line 4: (Warm, resolved) "I chose you… Because... You're the only one I know bold enough to follow me into the abyss and back." -Chapter 16
+Line 2: (Playful, humorous) "Oh! Hahaha! Y-yes, quite!! Made for people with iron grip and iron stress!" -Chapter 16
 
-Line 5: (Mocking, Sarcastic, Obsius) "Unless... You have a powerful telepathic Augur I don't know about... Dо уоu… Kаz? That's sneaky!" -Chapter 16`,
+Line 3: (Warm, resolved) "I chose you...because...you're the only one I know bold enough to follow me into the abyss and back." -Chapter 16
+
+Line 4: (Obsius, Breathy, Amused) " Ya caught me off guard! Feel special?! Umbral Tithe!" -Chapter 25
+
+Line 5: (Obsius, Mocking, Sarcastic) "Unless... You have a powerful telepathic Augur I don't know about... Dо уоu… Kаz? That's sneaky!" -Chapter 16`,
   },
   {
     id: 5,
     name: 'Kenzi Akimoto',
     role: 'The Royal Rogue',
-    bio: 'Kenzi was born into prestige, the daughter of an Pleading Council member and heir to a life most people could only dream of. But Kenzi’s determined to earn her place not by bloodline, but by skill and to fight for a world where no one’s born better than anyone else.',
+    bio: 'Kenzi was born into the prestigious race of "Ordained", the daughter of an Pleading Council member and heir to a life most people could only dream of. But Kenzi’s determined to earn her place not by bloodline, but by skill and to fight for a world where no one’s born better than anyone else.',
     personality:
-      'Energetic, bossy, and confident. Kenzi has a fiery attitude that keeps the group on their toes.',
+      'Energetic, bossy, and confident. Kenzi has a fiery attitude that keeps the group on their toes. (15-16 yo)',
     imageUrls: [
       'assets/KenziPort.png',
       'assets/KenziPage1.png',
@@ -358,7 +360,7 @@ Line 5: (Mocking, Sarcastic, Obsius) "Unless... You have a powerful telepathic A
 
 Line 2: (Assertive, Determined) "And I don’t care how important Ordained are to Glory Peak. I’m here to stop you!!" -Chapter 2
 
-Line 3: (Sarcastic, Nervous) "H-hey buggy! I’m not from here you know... You could uhh... Let me scootch on by and go home, yeah?" -Chapter 9
+Line 3: (Sarcastic, Nervous) "H-hey buggy! I’m not from here you know...You could uhh... Let me scootch on by and go home, yeah?" -Chapter 9
 
 Line 4: (Sad, in thought) "I can't even go with them to fight the wasp thingies... Am I... A bad secret agent? " -Chapter 12`,
   },
@@ -366,9 +368,9 @@ Line 4: (Sad, in thought) "I can't even go with them to fight the wasp thingies.
     id: 6,
     name: 'Solomon Vex',
     role: 'The Flame Spirit',
-    bio: 'Vex is a Tier 4 swordsman in Viveform who wields Spirignum, the flame spirit Augur that lets him breathe and control fire during battle. His sword, Zhomei, wrapped in bandages, is a trusted weapon whose origins are as mysterious as his own past.',
+    bio: 'Vex is a Tier 4 swordsman in Viveform who wields Spirignum, the flame spirit Augur that lets him breathe and control fire during battle. Ten years ago, Vex woke up in the forests of Laetowood without any memory of who he was or where he came from. The only clues to his identity are a strange necklace he has always worn and a red panda cub named Boca.  His sword, Zhomei, wrapped in bandages, is a trusted weapon whose origins are as mysterious as his own past.',
     personality:
-      'Fiery, full of heart and fiercely loyal. Vex loves a good challenge and eats more than anyone else.',
+      'Fiery, full of heart and fiercely loyal. Vex loves a good challenge and eats more than anyone else. (23-27 yo)',
     imageUrls: [
       'assets/VexPort.png',
       'assets/VexPage1.png',
@@ -393,7 +395,7 @@ OPTIONAL: (Exhasperated, humorous) "Rou is insane! The first thing she did when 
     role: "Vex's Pal",
     bio: "A red panda child who is Vex's closest companion. Despite his innocent look, Boca has a mischievous streak and a knack for getting into trouble, but his heart is always in the right place. He and Vex want to travel Viso to find out more about their past.",
     personality:
-      'Innocent but mischievous, with a heart of gold. Extremely curious and driven to explore the world.',
+      'Innocent but mischievous, with a heart of gold. Extremely curious and driven to explore the world. (8-10 yo)',
     imageUrls: [
       'assets/BocaPort.png',
       'assets/BocaPage1.png',
@@ -414,9 +416,9 @@ Line 4: (Innocent curiousity) "Are there peach squeezies in Glory Peak?" -Chapte
     id: 8,
     name: 'Kaz Greenfield',
     role: 'The Gifted Soldier',
-    bio: 'Kaz has spent his entire life preparing to serve Viveform. Born into a decorated military family, his upbringing was built on discipline, sacrifice, and the belief that glory is earned through unwavering loyalty. Every strike of his greatsword and every flawless command reflect years of training designed to shape him into the perfect soldier. Within Viveform’s ranks, Kaz’s reputation is unmatched, a rising star destined for leadership.',
+    bio: 'Kaz has spent his entire life preparing to serve Viveform. Born into a decorated military family, his upbringing was built on discipline, sacrifice, and the belief that glory is earned through unwavering loyalty.  Within Viveform’s ranks, Kaz’s reputation is unmatched, a rising star destined for leadership. But he lost his chance, when Rou was promoted to Captain over him. Now, Kaz must navigate the complex emotions of rivalry, respect, and the desire to prove himself worthy of command.',
     personality:
-      'Disciplined, confident and eager to demonstrate his skills and prowess. A bit cocky at times, though he means well.',
+      'Disciplined, confident and eager to demonstrate his skills and prowess. A bit cocky at times, though he means well. (20-25 yo)',
     imageUrls: [
       'assets/KazPort.png',
       'assets/KazPage1.png',
