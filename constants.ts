@@ -298,7 +298,7 @@ Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's 
     role: 'The Dark Showman',
     bio: "Drendith Nosferi comes from the legendary Nosferi family, a famed circus dynasty in Glory Peak. It's suspected he wields a dangerous and outlawed magic to perform his circus shows, and was placed under surveillance by Viveform. Under the glitz of performance, Drendith is motivated by a deep desire to restore his family’s honor and seek revenge against Viveform for their role in their catastrophic downfall.",
     personality:
-      'Flamboyant, showy and flirty. His peacock like exterior hides a deep darkness within. Drendith has the power to create powerful illusions with his Augur, Perfissio. (30-35yo)',
+      'Flamboyant, showy and flirty. His peacock like exterior hides a deep darkness within. Drendith has the power to create powerful illusions with his Augur, Perfissio. British Received Pronunciation Accent. (30-35yo)',
     imageUrls: [
       'assets/DrendithPort.png',
       'assets/DrenPage1.png',
@@ -321,7 +321,7 @@ Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned gu
     role: 'The Kingmaker',
     bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as feared as he is respected, a figure known for his stoic presence and sharp command of any situation. He carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
     personality:
-      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.* (30-38 yo)',
+      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. British Received Pronunciation Accent. (30-38 yo) *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.* ',
     imageUrls: [
       'assets/EnderPort.png',
       'assets/EnderPage1.png',
