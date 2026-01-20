@@ -14,6 +14,7 @@ export const ApplyForm: React.FC = () => {
     age: '',
     experience: '',
     equipment: '',
+    portfolioLink: '',
     primaryRole: '',
     otherRoles: '',
     notify: '',
@@ -45,7 +46,7 @@ export const ApplyForm: React.FC = () => {
 
     if (e.target.files && e.target.files[0]) {
       const selectedFile = e.target.files[0];
-      const allowedExtensions = ['.wav', '.mp3'];
+      const allowedExtensions = ['.wav', '.mp3', '.mp4'];
       const fileName = selectedFile.name.toLowerCase();
 
       const hasValidExtension = allowedExtensions.some((ext) =>
@@ -55,7 +56,7 @@ export const ApplyForm: React.FC = () => {
 
       if (!hasValidExtension) {
         setFile(null);
-        setFileError('Error: Only .wav or .mp3 files are accepted.');
+        setFileError('Error: Only .wav, .mp3, or .mp4 files are accepted.');
         if (fileInputRef.current) {
           fileInputRef.current.value = '';
         }
@@ -138,6 +139,7 @@ export const ApplyForm: React.FC = () => {
     netlifyData.append('age', formData.age);
     netlifyData.append('experience', formData.experience);
     netlifyData.append('equipment', formData.equipment);
+    netlifyData.append('portfolioLink', formData.portfolioLink);
     netlifyData.append('primaryRole', formData.primaryRole);
     netlifyData.append('otherRoles', formData.otherRoles);
     netlifyData.append('notify', formData.notify);
@@ -210,6 +212,7 @@ export const ApplyForm: React.FC = () => {
               age: '',
               experience: '',
               equipment: '',
+              portfolioLink: '',
               primaryRole: '',
               otherRoles: '',
               notify: '',
@@ -238,7 +241,14 @@ export const ApplyForm: React.FC = () => {
             <p>
               Submit your audition for the comic voice-over of
               <span className="text-white font-bold"> {MANGA_TITLE}</span>. Got
-              a question? Email fifimangaka@gmail.com.
+              a question? Email{' '}
+              <a
+                href="mailto:fifimangaka@gmail.com"
+                className="text-[#016F93] hover:text-[#0288ad] transition-colors font-bold underline underline-offset-4"
+              >
+                fifimangaka@gmail.com
+              </a>
+              .
             </p>
           </div>
         </header>
@@ -323,6 +333,12 @@ export const ApplyForm: React.FC = () => {
                 </span>
               </label>
             </div>
+            {formData.age === 'under-18' && (
+              <div className="mt-4 p-4 bg-red-500/10 border border-red-500/50 rounded-xl text-red-400 font-bold text-lg animate-fade-in">
+                This project is only accepting auditions from individuals 18+.
+                Thanks for your interest!
+              </div>
+            )}
           </div>
 
           {/* Experience Level */}
@@ -369,6 +385,21 @@ export const ApplyForm: React.FC = () => {
             />
           </div>
 
+          {/* Portfolio/Social Link */}
+          <div className="space-y-3">
+            <label className="block text-xl font-bold uppercase tracking-widest text-slate-400">
+              Portfolio or Social Link
+            </label>
+            <input
+              type="url"
+              name="portfolioLink"
+              value={formData.portfolioLink}
+              onChange={handleInputChange}
+              placeholder="https://yourportfolio.com or social link"
+              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-5 text-2xl focus:border-[#016F93] outline-none transition-colors"
+            />
+          </div>
+
           {/* Character Selection */}
           <div className="space-y-5">
             <label className="block text-xl font-bold uppercase tracking-widest text-slate-400">
@@ -399,11 +430,10 @@ export const ApplyForm: React.FC = () => {
           <div className="bg-slate-800 border-2 border-dashed border-slate-600 rounded-3xl p-10 space-y-8">
             <div className="text-center">
               <h3 className="text-3xl font-bold font-cinzel text-white mb-4">
-                Audition Audio
+                Upload Audition
               </h3>
               <p className="text-xl text-slate-400 italic">
-                Upload a .wav or .mp3 file (8MB max) or provide a Google Drive
-                link.
+                Upload a .wav, .mp3, or .mp4 file (8MB max)
               </p>
             </div>
 
@@ -413,7 +443,7 @@ export const ApplyForm: React.FC = () => {
                 name="audition-file"
                 ref={fileInputRef}
                 onChange={handleFileChange}
-                accept=".wav,.mp3"
+                accept=".wav,.mp3,.mp4"
                 className="hidden"
               />
               <button
@@ -435,7 +465,7 @@ export const ApplyForm: React.FC = () => {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                {file ? 'Change File' : 'Upload Audio File'}
+                {file ? 'Change File' : 'Upload File'}
               </button>
 
               {file && (
@@ -486,7 +516,7 @@ export const ApplyForm: React.FC = () => {
           )}
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || formData.age === 'under-18'}
             className="w-full bg-[#016F93] hover:bg-[#0288ad] hover:scale-[1.02] active:scale-[0.98] text-white font-bold py-6 rounded-2xl shadow-xl shadow-[#016F93]/20 hover:shadow-[#016F93]/40 disabled:bg-slate-700 disabled:shadow-none disabled:scale-100 transition-all flex items-center justify-center gap-4 text-2xl font-cinzel tracking-wide mt-8 cursor-pointer disabled:cursor-not-allowed"
           >
             {isSubmitting ? (

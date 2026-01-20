@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ye Olde Treehouse Casting Call</title>
+    <title>Fantasy Manga Casting Call</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,8 @@
       body {
         font-family: 'Lato', sans-serif;
         background-color: #040f1a;
-        background-image: radial-gradient(
+        background-image:
+          radial-gradient(
             at 20% 20%,
             hsla(208, 60%, 33%, 0.2) 0px,
             transparent 50%
@@ -40,26 +41,6 @@
       .font-lato {
         font-family: 'Lato', sans-serif;
       }
-      .character-card::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 0.5rem;
-        border: 2px solid transparent;
-        background: #079cb5;
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-          linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-      }
-      .character-card:hover::after {
-        opacity: 1;
-      }
 
       /* Standard Scrollbar Styles (Firefox) */
       * {
@@ -76,12 +57,21 @@
         background: #0f172a;
       }
       ::-webkit-scrollbar-thumb {
-        background: #016f93; /* Updated to brand navy for "original cover" feel */
+        background: #016f93;
         border-radius: 6px;
-        border: 3px solid #0f172a; /* Creates padding effect */
+        border: 3px solid #0f172a;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #015a7a;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
     </style>
     <script type="importmap">
@@ -94,21 +84,25 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <!-- Netlify Hidden Form for Detection -->
+    <!-- Netlify Hidden Forms for Detection -->
     <form name="casting-call" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="radio" name="age" />
       <input type="radio" name="experience" />
       <textarea name="equipment"></textarea>
+      <input type="text" name="portfolioLink" />
       <input type="radio" name="primaryRole" />
       <input type="text" name="otherRoles" />
-      <input type="radio" name="notify" />
+      <input type="checkbox" name="notify" />
       <input type="file" name="audition-file" />
       <input type="text" name="googleDriveLink" />
+    </form>
+
+    <form name="mailing-list" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
     </form>
 
     <div id="root"></div>
