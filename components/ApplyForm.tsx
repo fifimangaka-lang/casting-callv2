@@ -248,7 +248,7 @@ export const ApplyForm: React.FC = () => {
               >
                 fifimangaka@gmail.com
               </a>
-              .
+              . Deadline: March 31st.
             </p>
           </div>
         </header>
