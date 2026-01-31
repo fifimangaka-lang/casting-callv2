@@ -3,9 +3,13 @@ import { MANGA_TITLE } from '../constants';
 
 interface ProjectSpecsProps {
   onApplyClick: () => void;
+  onStaffClick: () => void;
 }
 
-export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
+export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
+  onApplyClick,
+  onStaffClick,
+}) => {
   return (
     <section
       id="project"
@@ -167,9 +171,9 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
               This is a{' '}
               <strong className="text-slate-900 uppercase">PAID</strong> voice
-              acting casting call. Please note, this is an indie project with 1
-              staff member (Sam) creating story and art for the manga, building
-              the websites, and handling all other production.
+              acting casting call. Please note, this is an indie project/budget
+              with 1 staff member (Sam) creating story and art for the manga,
+              building the websites, and handling all other production.
             </p>
             <div className="p-5 bg-[#E0F7FA]/30 rounded-xl border border-[#016F93]/10 shadow-inner">
               <p className="font-bold text-[#014d66] uppercase tracking-widest text-xs mb-3">
@@ -210,30 +214,44 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({ onApplyClick }) => {
           {/* Luminous CTA Audition Card */}
           <div
             id="apply"
-            className="md:col-span-2 bg-gradient-to-br from-[#016F93] to-[#014d66] p-10 md:p-16 rounded-3xl text-center shadow-2xl relative group overflow-hidden"
+            className="bg-gradient-to-br from-[#016F93] to-[#014d66] p-8 md:p-12 rounded-3xl text-center shadow-2xl relative group overflow-hidden"
           >
             {/* Animated BG Decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
 
-            <h3 className="text-3xl md:text-5xl font-bold font-cinzel text-white mb-6 tracking-wider relative z-10">
-              Ready to Audition?
+            <h3 className="text-2xl md:text-3xl font-bold font-cinzel text-white mb-4 tracking-wider relative z-10">
+              Voice Actors Audition
             </h3>
-            <p className="text-[#E0F7FA] text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
-              Submit your audition using our form below. Good luck! Submissions
+            <p className="text-[#E0F7FA] text-base font-light mb-8 max-w-2xl mx-auto leading-relaxed relative z-10">
+              Submit your audition using the form below. Good luck! Submissions
               for the current season close on{' '}
-              <span className="text-white font-bold underline decoration-white/30 underline-offset-8">
-                March 31st
+              <span className="text-white font-bold underline decoration-white/30 underline-offset-4">
+                Feb 12th
               </span>
               .
             </p>
             <button
               onClick={onApplyClick}
-              className="bg-white text-[#014d66] font-bold py-5 px-12 rounded-full hover:bg-[#E0F7FA] transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-black/20 uppercase tracking-[0.3em] font-cinzel text-sm group relative z-10 active:scale-95"
+              className="w-full bg-white text-[#014d66] font-bold py-4 px-8 rounded-full hover:bg-[#E0F7FA] transition-all duration-300 transform hover:scale-105 uppercase tracking-[0.2em] font-cinzel text-xs relative z-10 shadow-xl"
             >
-              Open Audition Form
-              <span className="inline-block ml-3 transform group-hover:translate-x-1 transition-transform">
-                →
-              </span>
+              Audition Form
+            </button>
+          </div>
+
+          {/* CTA Staff Card */}
+          <div className="bg-slate-900 p-8 md:p-12 rounded-3xl text-center shadow-2xl relative group overflow-hidden border border-[#016F93]/30">
+            <h3 className="text-2xl md:text-3xl font-bold font-cinzel text-white mb-4 tracking-wider relative z-10">
+              Send Your Portfolio
+            </h3>
+            <p className="text-slate-400 text-base font-light mb-8 max-w-2xl mx-auto leading-relaxed relative z-10">
+              Seeking Sound Designers, Video Editors! Send in your portfolio
+              below.
+            </p>
+            <button
+              onClick={onStaffClick}
+              className="w-full bg-transparent border-2 border-[#016F93] text-[#016F93] hover:text-white hover:bg-[#016F93] font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 uppercase tracking-[0.2em] font-cinzel text-xs relative z-10 shadow-xl shadow-black/40"
+            >
+              Portfolio Submission
             </button>
           </div>
         </div>

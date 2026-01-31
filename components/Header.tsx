@@ -120,6 +120,7 @@ export const Header: React.FC<HeaderProps> = ({ onApplyClick }) => {
                 Audition
               </button>
             </li>
+
             <li>
               <a
                 href={SOCIAL_LINKS.readManga}

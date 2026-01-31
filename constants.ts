@@ -241,6 +241,8 @@ const voiceLouisa = [
   'assets/Louisa4.wav',
 ];
 
+const voiceLuna = ['assets/Luna1.wav', 'assets/Luna2.wav', 'assets/Luna3.wav'];
+
 export const CHARACTERS: Character[] = [
   {
     id: 1,
@@ -298,7 +300,7 @@ Line 4: (Heavy, reflective) "That Volarite I stole from Koshi Siomus... There's 
     role: 'The Dark Showman',
     bio: "Drendith Nosferi comes from the legendary Nosferi family, a famed circus dynasty in Glory Peak. It's suspected he wields a dangerous and outlawed magic to perform his circus shows, and was placed under surveillance by Viveform. Under the glitz of performance, Drendith is motivated by a deep desire to restore his family’s honor and seek revenge against Viveform for their role in their catastrophic downfall.",
     personality:
-      'Flamboyant, showy and flirty. His peacock like exterior hides a deep darkness within. Drendith has the power to create powerful illusions with his Augur, Perfissio. British Received Pronunciation Accent. (30-35yo)',
+      'Flamboyant, showy and flirty. His peacock like exterior hides a deep darkness within. Drendith has the power to create powerful illusions with his Augur, Perfissio. British RP Accent. (30-35yo)',
     imageUrls: [
       'assets/DrendithPort.png',
       'assets/DrenPage1.png',
@@ -321,7 +323,7 @@ Line 4: (Worried, Frantic) "With the entrance of this repulsive and unplanned gu
     role: 'The Kingmaker',
     bio: 'Ender Valen leads Viveform’s military branch with unwavering discipline and a reputation for effectiveness that few dare question. Marked by the scar running down the left side of his face and body, Ender is as feared as he is respected, a figure known for his stoic presence and sharp command of any situation. He carries his own secrets, the largest of which remains hidden behind the scar that defines him. ',
     personality:
-      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. British Received Pronunciation Accent. (30-38 yo) *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.* ',
+      'Calm and gentle with his friends and subordinates. Though when possessed by Obsius, he becomes ruthless and merciless. British RP Accent. (30-38 yo) *NOTE: Obsius is a dark deity that occasionally takes control of Ender, amplifying his darker traits. VAs must be able to perform as Ender in his possessed state.* ',
     imageUrls: [
       'assets/EnderPort.png',
       'assets/EnderPage1.png',
@@ -435,20 +437,68 @@ Line 3: (Ominous, then humorous) "I see, well I should probably warn you then, b
 
 Line 4: (Furious, Exploding) "Grrr...Then fuck formalities!! Let me speak freely, Ender!!" -Chapter 16`,
   },
-  // {
-  //   id: 9,
-  //   name: 'Louisa De Luz',
-  //   role: 'The Training Captain',
-  //   bio: "A noblewoman and spymaster who navigates the treacherous courts of the kingdom. She uses wit and charm as her primary weapons, funding the heroes' journey for her own political gain.",
-  //   personality:
-  //     'Charismatic, manipulative, intelligent, always three steps ahead, her true motives are a mystery.',
-  //   imageUrls: [
-  //     'assets/LouisaPort.png',
-  //     'assets/LouisaPage1.png',
-  //     'assets/LouisaPage2.png',
-  //     'assets/LouisaPage3.png',
-  //   ],
-  //   voiceExamples: voiceLouisa,
-  //   voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',
-  // },
+  //   {
+  //     id: 9,
+  //     name: 'Yi- Luna',
+  //     role: 'The Oathkeeper',
+  //     bio: "Yi-Luna is the Commander of the New Alta Dercha province of Glory Peak. He's responsible for navigating the ongoing domestic tensions with New Alta Izera. He's Ender's right hand guy and extremely loyal to his counterpart. Having been enlisted in Viveform's military branch since his teenage years, he's developed a reputation for his direct and sharp approach. Though once the clock hits 5pm, he hits the local pub.",
+  //     personality:
+  //       'Warm, composed.  A “cool uncle” with a soft spot for jokes and craft beer. (38-45 yo)',
+  //     imageUrls: [
+  //       'assets/Luna1.png',
+  //       'assets/LunaPage1.png',
+  //       'assets/LunaPage2.png',
+  //     ],
+  //     voiceExamples: voiceLuna,
+  //     voiceRef: 'Rude - Final Fantasy VII Remake (William C. Stephens)',
+  //     auditionLines: `Line 1: (Stern, Sarcastic) "Now, we're going on a little field trip. You wanted to be a superhero? Well, your wish has been granted." -Chapter 2
+
+  // Line 2: (Stern, Precise) "Understood, we will keep things stable in New Alta Dercha, Ender." -Chapter 3
+
+  // Line 3: (Exploding, Comedy Gag) "I said stop moving you little twerp!!" -Chapter 3`,
+  //   },
+  //   {
+  //     id: 10,
+  //     name: 'Louisa De Luz',
+  //     role: 'The Training Captain',
+  //     bio: "Louisa is the dedicated and newly promoted training captain of Viveform's New Colony Prima base. Though most of the trainees tower over her, she enforces Viveform's strict rules with a stern fist. She even enforces rules no one (not even Ender) knows exists. 'Ensuring soldiers follow our carefully crafted rules is my passion!', she says. Louisa must be fun at parties.",
+  //     personality:
+  //       'Spunky, orderly and gentle. Unless you break a rule, that is.',
+  //     imageUrls: [
+  //       'assets/LouisaPort.png',
+  //       'assets/LouisaPage1.png',
+  //       'assets/LouisaPage2.png',
+  //       'assets/LouisaPage3.png',
+  //     ],
+  //     voiceExamples: voiceLouisa,
+  //     voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',
+  //     auditionLines: `Line 1: (Bossy , Sharp) "Kaz Greenfield! You will now be ticketed for reciting mission codes! You know better!" -Chapter 4
+
+  //   Line 2: (With Resolve) "So fight your hearts out! Show them what the great defenders of Glory Peak can do!" -Chapter 5
+
+  //   Line 3: (Shocked, High-Pitched) "Oh my goodness!! How has he managed to infiltrate us?!" -Chapter 6
+
+  //   Line 4: (Serious, Reflective) "Yes... Altamerian. The place our entire country has tried to put behind us." -Chapter 4`,
+  //   },
+  //   {
+  //     id: 11,
+  //     name: 'Elizabeth Cod',
+  //     role: 'The Nosferi Pop Star Diva',
+  //     bio: 'A famous pop idol in Glory Peak who traded her safe glitzy life for the macabre glamour of the Nosferi Circus. Her cute image and bubbly voice draws in fans by the thousands, but behind the scenes, she controls the Nosferi Circuses finances with the ruthlessness of a mob boss. Every one of the Nosferi troupe tries to get in good with her to get a sweet bonus (even Drendith!).',
+  //     personality:
+  //       "Glittering sparkly diva when the camera's on her. Stone-cold crime boss when it's time to talk numbers. British RP Accent. (22-25 yo)",
+  //     imageUrls: [
+  //       'assets/lizaport.png',
+  //       'assets/LizPage1.png',
+  //       'assets/LizPage2.png',
+  //     ],
+  //     voiceExamples: voiceLouisa,
+  //     voiceRef: 'Celica - Fire Emblem Warriors (Erica Lindbeck)',
+  //     auditionLines: `Line 1: (Cute, Bratty) "A gang?! We're a dazzling people centric circus operation. Thank you!" -Chapter 24
+
+  //   Line 2: (Cheeky, Playful) "So tell me boys...who did the most to advance our little Laetowood scheme, hmm?" -Chapter 24
+
+  //   Line 3: (Bubbly, Bright) "Another win for the ladies of the Nosferi troupe!" -Chapter 24
+  //   `,
+  //   },
 ];
