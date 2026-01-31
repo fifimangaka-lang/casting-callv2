@@ -169,7 +169,7 @@ export const CreativesForm: React.FC = () => {
             </label>
             <input
               required
-              type="url"
+              type="text"
               name="portfolio"
               value={formData.portfolio}
               onChange={handleInputChange}
