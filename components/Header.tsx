@@ -112,14 +112,14 @@ export const Header: React.FC<HeaderProps> = ({ onApplyClick }) => {
                 Pronunciation
               </a>
             </li>
-            <li>
+            {/* <li>
               <button
                 onClick={onApplyClick}
                 className="hover:text-[#016F93] transition-colors duration-300 font-bold"
               >
                 Audition
               </button>
-            </li>
+            </li> */}
 
             <li>
               <a

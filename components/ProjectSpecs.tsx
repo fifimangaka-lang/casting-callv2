@@ -223,19 +223,17 @@ export const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
               Voice Actors Audition
             </h3>
             <p className="text-[#E0F7FA] text-base font-light mb-8 max-w-2xl mx-auto leading-relaxed relative z-10">
-              Submit your audition using the form below. Good luck! Submissions
-              for the current season close on{' '}
               <span className="text-white font-bold underline decoration-white/30 underline-offset-4">
-                Feb 12th
-              </span>
-              .
+                The VA audition window is closed.
+              </span>{' '}
+              Thank you to everyone who auditioned!!
             </p>
-            <button
+            {/* <button
               onClick={onApplyClick}
               className="w-full bg-white text-[#014d66] font-bold py-4 px-8 rounded-full hover:bg-[#E0F7FA] transition-all duration-300 transform hover:scale-105 uppercase tracking-[0.2em] font-cinzel text-xs relative z-10 shadow-xl"
             >
               Audition Form
-            </button>
+            </button> */}
           </div>
 
           {/* CTA Staff Card */}
