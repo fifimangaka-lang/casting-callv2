@@ -85,6 +85,18 @@ export const GLOBAL_PRONUNCIATIONS: PronunciationEntry[] = [
     category: 'name',
     audioUrl: 'assets/KoshiSiomus_1.wav',
   },
+  {
+    term: 'Gammi',
+    phonetic: 'GAM-mee',
+    category: 'name',
+    audioUrl: 'assets/Gammi_1.wav',
+  },
+  {
+    term: 'Zazi',
+    phonetic: 'ZAH-zee',
+    category: 'name',
+    audioUrl: 'assets/Zazi_1.wav',
+  },
 
   // LOCATIONS
   {
@@ -122,6 +134,12 @@ export const GLOBAL_PRONUNCIATIONS: PronunciationEntry[] = [
     phonetic: 'Vee-so',
     category: 'location',
     audioUrl: 'assets/Viso_1.wav',
+  },
+  {
+    term: 'New Colony Prima',
+    phonetic: 'NEW COL-oh-nee PRY-mah',
+    category: 'location',
+    audioUrl: 'assets/NewColonyPrima_1.wav',
   },
 
   // TERMINOLOGY
@@ -172,6 +190,48 @@ export const GLOBAL_PRONUNCIATIONS: PronunciationEntry[] = [
     phonetic: 'UM-bral TYTH',
     category: 'term',
     audioUrl: 'assets/UmbralTithe_1.wav',
+  },
+  {
+    term: 'VV Dercha',
+    phonetic: 'Vee-Vee DER-chah',
+    category: 'term',
+    audioUrl: 'assets/VVDercha_1.wav',
+  },
+  {
+    term: 'Kuahn',
+    phonetic: 'KOO-ahn',
+    category: 'term',
+    audioUrl: 'assets/Kuahn_1.wav',
+  },
+  {
+    term: 'Psy Sho',
+    phonetic: 'SIGH-show',
+    category: 'term',
+    audioUrl: 'assets/PsySho_1.wav',
+  },
+  {
+    term: 'Psyonic Prism',
+    phonetic: 'SIGH-oh-nik PRIZ-um',
+    category: 'term',
+    audioUrl: 'assets/PsyonicPrism_1.wav',
+  },
+  {
+    term: 'Pterosaur',
+    phonetic: 'TER-oh-sore',
+    category: 'term',
+    audioUrl: 'assets/pterosaur_1.wav',
+  },
+  {
+    term: 'Retorta Saltu',
+    phonetic: 'REHT-ohr-tah SAL-too',
+    category: 'term',
+    audioUrl: 'assets/RetortaSaltu_1.wav',
+  },
+  {
+    term: "Ta'Shofela",
+    phonetic: 'TAH-SHOF-eh-lah',
+    category: 'term',
+    audioUrl: 'assets/TaShofela_1.wav',
   },
 ];
 
